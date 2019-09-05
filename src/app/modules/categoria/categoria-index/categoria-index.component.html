@@ -1,0 +1,22 @@
+<a routerLink="/categoria/cadastro" class="btn btn-raised btn-primary">Nova Categoria</a>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <td>Código</td>
+      <td>Nome</td>
+      <td>Ação</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categoria of categorias">
+      <td>{{categoria.id}}</td>
+      <td>{{categoria.nome}}</td>
+      <td>
+        <button class="btn btn-raised btn-primary mr-2">Editar</button>
+        <button class="btn btn-raised btn-danger" 
+        (click)="apagar(categoria.id)">Apagar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
