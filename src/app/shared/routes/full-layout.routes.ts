@@ -13,5 +13,9 @@ export const Full_ROUTES: Routes = [
   {
     path: 'categoria',
     loadChildren: () => import('../../modules/categoria/categoria.module').then(m => m.CategoriaModule)
+  },
+  {
+    path: 'estoque',
+    loadChildren: () => import('../../modules/estoque/estoque.module').then(m => m.EstoqueModule)
   }
 ];
