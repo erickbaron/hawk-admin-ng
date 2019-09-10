@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'environments/environment';
-import { Categoria } from 'app/models/categoria';
+import { Categoria } from '../models/categoria';
+import { environment } from '../../environments/environment';
+
+
 
 const url = environment.url + "/categorias"
 @Injectable({

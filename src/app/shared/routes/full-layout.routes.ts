@@ -21,5 +21,9 @@ export const Full_ROUTES: Routes = [
   {
     path: 'produto-cadastro',
     loadChildren: () => import('../../modules/produto/produto-cadastro/produto-cadastro.component')
+  },
+  {
+    path: 'estoque',
+    loadChildren: () => import('../../modules/estoque/estoque.module').then(m => m.EstoqueModule)
   }
 ];
