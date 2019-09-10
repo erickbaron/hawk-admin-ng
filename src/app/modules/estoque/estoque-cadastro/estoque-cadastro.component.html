@@ -7,5 +7,9 @@
 
     <label for="campo-quantidade">Quantidade</label>
     <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
+
+    <label for="campo-data">Data de Entrada</label>
+    <input type="date" class="form-control" [(ngModel)]="estoque.data_entrada">
+
   </div> 
   <button class="btn btn-raised btn-success" (click)="salvar()">Salvar</button>
