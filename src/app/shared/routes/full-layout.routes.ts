@@ -13,5 +13,13 @@ export const Full_ROUTES: Routes = [
   {
     path: 'categoria',
     loadChildren: () => import('../../modules/categoria/categoria.module').then(m => m.CategoriaModule)
-  } 
+  },
+  {
+    path: 'produto',
+    loadChildren: () => import('../../modules/produto/produto.module').then(m => m.ProdutoModule)
+  }, 
+  {
+    path: 'produto-cadastro',
+    loadChildren: () => import('../../modules/produto/produto-cadastro/produto-cadastro.component')
+  }
 ];

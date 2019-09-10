@@ -1,0 +1,38 @@
+<a routerLink="/produto/cadastro" class="btn btn-raised btn-primary">Novo Produto</a>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <td>Código</td>
+      <td>Nome</td>
+      <td>Valor Custo</td>
+      <td>Promoção</td>
+      <td>Valor Venda</td>
+      <td>Descrição</td>
+      <td>Peso</td>
+      <td>Altura</td>
+      <td>Largura</td>
+      <td>Comprimento</td>
+      <td>Ação</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos">
+      <td>{{produto.id}}</td>
+      <td>{{produto.nome}}</td>
+      <td>{{produto.valor-custo}}</td>
+      <td>{{produto.promocao}}</td>
+      <td>{{produto.valor-venda}}</td>
+      <td>{{produto.descricao}}</td>
+      <td>{{produto.peso}}</td>
+      <td>{{produto.altura}}</td>
+      <td>{{produto.largura}}</td>
+      <td>{{produto.comprimento}}</td>
+      <td>
+        <button class="btn btn-raised btn-primary mr-2">Editar</button>
+        <button class="btn btn-raised btn-danger" 
+        (click)="apagar(produto.id)">Apagar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
