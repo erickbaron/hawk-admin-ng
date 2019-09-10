@@ -1,0 +1,26 @@
+<a routerLink="/estoque/cadastro" class="btn btn-raised btn-primary">Novo Estoque</a>
+
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <td>Código</td>
+        <td>Produto</td>
+        <td>Tipo</td>
+        <td>Quantidade</td>
+        <td>Ação</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estoque of estoques">
+        <td>{{estoque.id}}</td>
+        <td>{{estoque.id_produto}}</td>
+        <td>{{estoque.tipo}}</td>
+        <td>{{estoque.quantidade}}</td>
+        <td>
+          <button class="btn btn-raised btn-primary mr-2">Editar</button>
+          <button class="btn btn-raised btn-danger" 
+          (click)="apagar(categoria.id)">Apagar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

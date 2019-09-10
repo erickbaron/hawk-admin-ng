@@ -1,0 +1,15 @@
+<div class="form-group">
+    <label for="campo-produto">Nome Produto</label>
+    <input type="text" class="form-control" [(ngModel)]="estoque.id_produto">
+
+    <label for="campo-tipo">Tipo</label>
+    <input type="text" class="form-control" [(ngModel)]="estoque.tipo">
+
+    <label for="campo-quantidade">Quantidade</label>
+    <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
+
+    <label for="campo-data">Data de Entrada</label>
+    <input type="date" class="form-control" [(ngModel)]="estoque.data_entrada">
+
+  </div> 
+  <button class="btn btn-raised btn-success" (click)="salvar()">Salvar</button>
