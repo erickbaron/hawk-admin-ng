@@ -5,9 +5,10 @@ import { ProdutoRoutingModule } from './produto-routing.module';
 import { ProdutoIndexComponent } from './produto-index/produto-index.component';
 import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
 import { FormsModule } from '@angular/forms';
+import { ProdutoEditarComponent } from './produto-editar/produto-editar.component';
 
 @NgModule({
-  declarations: [ProdutoIndexComponent, ProdutoCadastroComponent],
+  declarations: [ProdutoIndexComponent, ProdutoCadastroComponent, ProdutoEditarComponent],
   imports: [
     CommonModule,
     FormsModule,
