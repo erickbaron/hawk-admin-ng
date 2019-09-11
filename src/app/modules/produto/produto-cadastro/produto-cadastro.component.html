@@ -3,11 +3,6 @@
     <input type="text" class="form-control" [(ngModel)]="produto.nome">
   </div>
   
-  <div class="form-group">
-      <input type="checkbox" class="custom-control" [(ngModel)]="produto.promocao">
-      <label>Promoção</label>
-    </div>
-   
 <div class="row">
   <div class="col-6">
       <div class="form-group">
@@ -25,7 +20,7 @@
 
  <div class="form-group">
    <label for="campo-descricao">Descrição</label>
-   <input type="text" class="form-control" [(ngModel)]="produto.descricao">
+   <textarea class="form-control" [(ngModel)]="produto.descricao"></textarea>
  </div>
 
 <div class="row">
@@ -59,4 +54,4 @@
 </div>
 
 <button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-  <button class="btn btn-raised btn-success pull-right ft-save" (click)="salvar()">Salvar</button>
+  <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>
