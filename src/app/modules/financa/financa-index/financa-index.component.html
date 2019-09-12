@@ -1,0 +1,19 @@
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <td>Mes</td>
+      <td>Valor de custo</td>
+      <td>Valor de venda</td>
+      <td>Lucro</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let financa of financas">
+      <td>{{financa.mes}}</td>
+      <td>{{financa.valorCusto}}</td>
+      <td>{{financa.valorVenda}}</td>
+      <td>{{financa.lucro}}</td>
+    </tr>
+  </tbody>
+</table>
