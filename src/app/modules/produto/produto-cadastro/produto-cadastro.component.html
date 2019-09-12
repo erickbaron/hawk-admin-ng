@@ -4,31 +4,32 @@
     <input type="text" class="form-control" [(ngModel)]="produto.nome">
   </div>
   
-<div>
+<div class="row">
+  <div class="col-6">
     <div class="form-group">
         <label for="campo-categoria">Categoria</label>
         <input type="number" class="form-control" [(ngModel)]="produto.categoriaId">
       </div>
-</div>
-
-<div>
-  <div class="form-group">
-      <label for="campo-empresa">Empresa</label>
-      <input type="number" class="form-control" [(ngModel)]="produto.empresaId">
     </div>
-</div>
+    <div class="col-6">
+        <div class="form-group">
+          <label for="campo-empresa">Empresa</label>
+          <input type="number" class="form-control" [(ngModel)]="produto.empresaId">
+        </div>
+      </div>
+    </div>
 
 <div class="row">
   <div class="col-6">
       <div class="form-group">
           <label for="campo-valor-custo">Valor Custo</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.valor_custo">
+          <input type="number" class="form-control" [(ngModel)]="produto.valorCusto">
         </div> 
   </div>
   <div class="col-6">
       <div class="form-group">
           <label for="campo-valor-venda">Valor Venda</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.valor_venda">
+          <input type="number" class="form-control" [(ngModel)]="produto.valorVenda">
         </div>
   </div>
 </div>
