@@ -1,6 +1,6 @@
-import { Administrador } from './administrador';
 import { Categoria } from './categoria';
 import { AvaliacaoProduto } from './avaliacao-produto';
+import { Empresa } from './empresa';
 
 
 export class Produto {
@@ -15,7 +15,7 @@ export class Produto {
     largura: number;
     comprimento: number;
     registro_ativo: boolean;
-    administrador: Administrador;
-    categoria: Categoria;
+    empresaId: Empresa;
+    categoriaId: Categoria;
     avaliacao_produto: AvaliacaoProduto;
 }

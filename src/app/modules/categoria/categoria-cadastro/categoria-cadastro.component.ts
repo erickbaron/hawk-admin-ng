@@ -19,11 +19,12 @@ export class CategoriaCadastroComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.returnUrl = '/produto'
+    this.returnUrl = '/categoria'
   }
 
   salvar() {
     this.service.adicionar(this.categoria).subscribe(x => {
+      this.router.navigateByUrl(this.returnUrl)
       // sucesso
       alert("Cadastrou")
     }, 
