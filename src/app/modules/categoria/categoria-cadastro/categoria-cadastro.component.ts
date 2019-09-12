@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from 'app/services/categoria.service';
 import { Categoria } from 'app/models/categoria';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-categoria-cadastro',
@@ -8,12 +9,17 @@ import { Categoria } from 'app/models/categoria';
   styles: []
 })
 export class CategoriaCadastroComponent implements OnInit {
+  returnUrl: string;
 
   categoria: Categoria = new Categoria();
 
-  constructor(private service: CategoriaService) { }
+  constructor(
+    private service: CategoriaService, 
+    private route: ActivatedRoute, 
+    private router: Router) { }
 
   ngOnInit() {
+    this.returnUrl = '/produto'
   }
 
   salvar() {
@@ -26,4 +32,8 @@ export class CategoriaCadastroComponent implements OnInit {
       alert("Não foi possível cadastrar")
     })
   }
+
+    cancelar() {
+      this.router.navigateByUrl(this.returnUrl)
+    }
 }
