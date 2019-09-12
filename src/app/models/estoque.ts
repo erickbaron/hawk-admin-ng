@@ -8,6 +8,6 @@ export class Estoque {
     tipo: boolean;
     data_entrada: string;
     registro_ativo: boolean;
-    empresa: Empresa;
-    produto: Produto;
+    id_empresa: Empresa;
+    id_produto: Produto;
 }
