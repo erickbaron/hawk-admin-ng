@@ -4,18 +4,22 @@
     <thead>
       <tr>
         <td>Código</td>
+        <td>Empresa</td>
         <td>Produto</td>
         <td>Tipo</td>
         <td>Quantidade</td>
+        <td>Data Entrada</td>
         <td>Ação</td>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let estoque of estoques">
         <td>{{estoque.id}}</td>
-        <td>{{estoque.id_produto}}</td>
+        <td>{{estoque.empresa}}</td>
+        <td>{{estoque.produto}}</td>
         <td>{{estoque.tipo}}</td>
         <td>{{estoque.quantidade}}</td>
+        <td>{{estoque.data_entrada}}</td>
         <td>
           <button class="btn btn-raised btn-primary mr-2" (click)="modal">Editar</button>
           <button class="btn btn-raised btn-danger" 
