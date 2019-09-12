@@ -17,6 +17,10 @@ export class ProdutoService {
     return this.http.get<Produto[]>(url + "/obtertodos");
   }
 
+  alterar(produto): Observable<Produto> {
+    return this.http.put<Produto>(url + '/alterar', produto);
+  }
+
   adicionar(produto: Produto): Observable<any> {
     return this.http.post(url + "/add", produto);
   }
