@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from 'app/services/produto.service';
 import { Produto } from 'app/models/produto';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-produto-cadastro',
@@ -9,17 +9,17 @@ import { ActivatedRoute } from '@angular/router';
   styles: []
 })
 export class ProdutoCadastroComponent implements OnInit {
+  returnUrl: string;
 
   produto: Produto = new Produto();
   
-  id: number
   constructor(
     private service: ProdutoService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-    this.obterPeloId(this.id);
+    this.returnUrl = '/produto'
   }
 
   salvar() {
@@ -31,5 +31,9 @@ export class ProdutoCadastroComponent implements OnInit {
       // erro
       alert("Não foi possível cadastrar")
     })
+  }
+
+  cancelar() {
+    this.router.navigateByUrl(this.returnUrl)
   }
 }
