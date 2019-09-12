@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from 'app/services/categoria.service';
 import { Categoria } from 'app/models/categoria';
+import { CategoriaService } from 'app/services/categoria.service';
 
 @Component({
   selector: 'app-categoria-cadastro',
