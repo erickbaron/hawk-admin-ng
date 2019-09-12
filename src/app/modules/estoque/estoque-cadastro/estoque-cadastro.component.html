@@ -1,10 +1,10 @@
 <div class="form-group">
 
     <label for="campo-empresa">Empresa</label>
-    <input class="form-control" name="nome-empresa" [(ngModel)]="estoque.empresa">
+    <input class="form-control" name="nome-empresa" [(ngModel)]="estoque.empresaId">
 
     <label for="campo-nome">Produto</label>
-    <input class="form-control" name="nome-produto" [(ngModel)]="estoque.produto">
+    <input class="form-control" name="nome-produto" [(ngModel)]="estoque.produtoId">
 
     <label for="campo-tipo">Tipo</label>
     <input type="" class="form-control" [(ngModel)]="estoque.tipo">
@@ -13,7 +13,7 @@
     <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
 
     <label for="campo-data">Data de Entrada</label>
-    <input type="date" class="form-control" [(ngModel)]="estoque.data_entrada">
+    <input type="date" class="form-control" [(ngModel)]="estoque.dataEntrada">
 
   </div> 
   <button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>

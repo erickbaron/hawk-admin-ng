@@ -19,7 +19,7 @@
     background-color: transparent;
     border: none;
     .icon-bar{
-      background-color: inherit;
+      background-color: blue;
       border: 1px solid;
 
       & + .icon-bar{
@@ -64,6 +64,7 @@
                 padding: 0rem 1rem;
                 margin: 0;
                 height: auto;
+                
             }
 
     }
