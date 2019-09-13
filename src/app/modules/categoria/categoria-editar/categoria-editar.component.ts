@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from 'app/services/produto.service';
+import { CategoriaService } from 'app/services/categoria.service';
 import { ActivatedRoute } from '@angular/router';
-import { Produto } from 'app/models/produto';
+import { Categoria } from 'app/models/categoria';
 
 @Component({
-  selector: 'app-produto-editar',
-  templateUrl: './produto-editar.component.html',
+  selector: 'app-categoria-editar',
+  templateUrl: './categoria-editar.component.html',
   styles: []
 })
-export class ProdutoEditarComponent implements OnInit {
-  produto: Produto = new Produto;
+export class CategoriaEditarComponent implements OnInit {
+  categoria: Categoria = new Categoria;
   id: number
   constructor(
-    private service: ProdutoService,
+    private service: CategoriaService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -22,13 +22,13 @@ export class ProdutoEditarComponent implements OnInit {
 
   obterPeloId(id) {
     this.service.obterPeloId(id).subscribe(x => {
-      this.produto = x;
+      this.categoria = x;
     })
   }
 
 
-  alterar(produto) {
-    this.service.alterar(produto).subscribe( x => {
+  alterar(categoria) {
+    this.service.alterar(categoria).subscribe( x => {
       alert("Registro Alterado com Sucesso")
     },
     error => {

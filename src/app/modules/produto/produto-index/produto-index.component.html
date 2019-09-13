@@ -19,20 +19,17 @@
     <tr *ngFor="let produto of produtos">
       <td>{{produto.id}}</td>
       <td>{{produto.nome}}</td>
-
       <td>{{produto.valorCusto}}</td>
-      <td>{{produto.promocao}}</td>
       <td>{{produto.valorVenda}}</td>
-
       <td>{{produto.descricao}}</td>
       <td>{{produto.peso}}</td>
       <td>{{produto.altura}}</td>
       <td>{{produto.largura}}</td>
       <td>{{produto.comprimento}}</td>
       <td>
-        <button class="btn btn-raised btn-primary mr-2">Editar</button>
-        <button class="btn btn-raised btn-danger" 
-        (click)="apagar(produto.id)">Apagar</button>
+        <a class="btn btn-raised btn-primary mr-2" routerLink="/produto/editar/{{produto.id}}">Editar</a>
+        <a class="btn btn-raised btn-danger" 
+        (click)="apagar(produto.id)">Apagar</a>
       </td>
     </tr>
   </tbody>

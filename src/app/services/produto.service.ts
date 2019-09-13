@@ -17,8 +17,12 @@ export class ProdutoService {
     return this.http.get<Produto[]>(url + "/obtertodos");
   }
 
+  obterPeloId(id: number): Observable<any> {
+    return this.http.get<any>(url + "/obterpeloid?id=" + id); 
+  }
+
   alterar(produto): Observable<Produto> {
-    return this.http.put<Produto>(url + '/alterar', produto);
+    return this.http.put<Produto>(url + '/update', produto);
   }
 
   adicionar(produto: Produto): Observable<any> {

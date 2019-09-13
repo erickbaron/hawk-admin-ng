@@ -19,6 +19,14 @@ export class CategoriaService {
     return this.http.get<Categoria[]>(url + "/obtertodos");
   }
 
+  obterPeloId(id: number): Observable<any> {
+    return this.http.get<any>(url + "/obterpeloid?id=" + id); 
+  }
+
+  alterar(produto): Observable<Categoria> {
+    return this.http.put<Categoria>(url + '/update', produto);
+  }
+
   adicionar(categoria: Categoria): Observable<any> {
     return this.http.post(url + "/add", categoria);
   }
