@@ -6,7 +6,7 @@
         <td>Código</td>
         <td>Empresa</td>
         <td>Produto</td>
-        <td>Tipo</td>
+        <td>Entrada/Saida</td>
         <td>Quantidade</td>
         <td>Data Entrada</td>
         <td>Ação</td>
@@ -17,11 +17,11 @@
         <td>{{estoque.id}}</td>
         <td>{{estoque.empresaId}}</td>
         <td>{{estoque.produtoId}}</td>
-        <td>{{estoque.tipo}}</td>
+        <td>{{estoque.entrada}}</td>
         <td>{{estoque.quantidade}}</td>
         <td>{{estoque.dataEntrada}}</td>
         <td>
-          <button class="btn btn-raised btn-primary mr-2" (click)="modal">Editar</button>
+          <a class="btn btn-raised btn-primary mr-2" routerLink="/estoque/editar/{{estoque.id}}">Editar</a>
           <button class="btn btn-raised btn-danger" 
           (click)="apagar(estoque.id)">Apagar</button>
         </td>
