@@ -14,8 +14,10 @@ export class ProdutoCadastroComponent implements OnInit {
   returnUrl: string;
 
   produto: Produto = new Produto();
+
   categorias: Categoria[] = [];
   idCategoria: string = '';
+  
   constructor(
     private service: ProdutoService,
     private route: ActivatedRoute,
