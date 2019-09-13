@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { Categoria } from '../models/categoria';
 import { environment } from '../../environments/environment';
 
-
-
 const url = environment.url + "/categorias"
 @Injectable({
   providedIn: 'root'
@@ -23,8 +21,8 @@ export class CategoriaService {
     return this.http.get<any>(url + "/obterpeloid?id=" + id); 
   }
 
-  alterar(produto): Observable<Categoria> {
-    return this.http.put<Categoria>(url + '/update', produto);
+  alterar(categoria): Observable<Categoria> { 
+    return this.http.put<Categoria>(url + '/update', categoria);
   }
 
   adicionar(categoria: Categoria): Observable<any> {
