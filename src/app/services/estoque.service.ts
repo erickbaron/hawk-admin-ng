@@ -18,6 +18,10 @@ export class EstoqueService {
     return this.http.get<Estoque[]>(url + "/obtertodos");
   }
 
+  obterPeloId(id: number): Observable<any> {
+    return this.http.get<any>(url + "/obterpeloid?id=" + id); 
+  }
+
   adicionar(estoque: Estoque): Observable<any> {
     return this.http.post(url + "/add", estoque);
   }
@@ -25,4 +29,9 @@ export class EstoqueService {
   apagar(id: number): Observable<any> {
     return this.http.delete(url + "/delete?id=" + id);
   }
+
+  alterar(estoque): Observable<Estoque> {
+    return this.http.put<Estoque>(url + '/update', estoque);
+  }
+
 }

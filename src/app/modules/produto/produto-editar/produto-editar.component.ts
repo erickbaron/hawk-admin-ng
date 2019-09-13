@@ -11,6 +11,7 @@ import { Produto } from 'app/models/produto';
 export class ProdutoEditarComponent implements OnInit {
   produto: Produto = new Produto;
   id: number
+
   constructor(
     private service: ProdutoService,
     private route: ActivatedRoute) { }
@@ -25,7 +26,6 @@ export class ProdutoEditarComponent implements OnInit {
       this.produto = x;
     })
   }
-
 
   alterar(produto) {
     this.service.alterar(produto).subscribe( x => {
