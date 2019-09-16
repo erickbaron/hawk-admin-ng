@@ -19,6 +19,8 @@ export class ProdutoEditarComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) { }
 
+    produtos: Produto[] = [];
+
   ngOnInit() {
     this.returnUrl = '/produto'
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -31,9 +33,18 @@ export class ProdutoEditarComponent implements OnInit {
     })
   }
 
+  atualizarDados(){
+    this.service.obterTodos().subscribe(x => {
+      this.produtos = x;
+    }, error => { 
+      alert("ERROR");
+    });
+  }
 
   alterar(produto) {
+    this.router.navigateByUrl(this.returnUrl)
     this.service.alterar(produto).subscribe( x => {
+      this.atualizarDados()
       alert("Registro Alterado com Sucesso")
     },
     error => {
