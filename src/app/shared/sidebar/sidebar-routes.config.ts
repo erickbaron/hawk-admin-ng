@@ -25,7 +25,7 @@ export const ROUTES: RouteInfo[] = [
     },
     
     {
-        path: '', title: 'Finança', icon: 'ft-align-left', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+        path: '', title: 'Finanças', icon: 'ft-align-left', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
         submenu: [
             { path: '/financa/', title: 'Lista', icon: 'list', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] }
         ]
