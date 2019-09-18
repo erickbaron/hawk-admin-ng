@@ -11,10 +11,13 @@
         (open)="obterTodosCategoria()" (change)="selecionadoCategoria($event)">
       </ng-select>
   </div>
+
   <div class="col-6">
     <div class="form-group">
       <label for="campo-empresa">Empresa</label>
-      <input type="number" class="form-control" [(ngModel)]="produto.empresaId">
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione"[(ngModel)]="idEmpresa"
+        (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
+      </ng-select>
     </div>
   </div>
 </div>

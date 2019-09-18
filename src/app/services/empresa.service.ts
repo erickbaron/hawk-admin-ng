@@ -12,7 +12,7 @@ export class EmpresaService {
 
   constructor(private http: HttpClient) { }
 
-  // ajax
+ 
   obterTodos(): Observable<Empresa[]> {
     return this.http.get<Empresa[]>(url + "/obtertodos");
   }
@@ -21,16 +21,5 @@ export class EmpresaService {
     return this.http.get<any>(url + "/obterpeloid?id=" + id); 
   }
 
-  adicionar(empresa: Empresa): Observable<any> {
-    return this.http.post(url + "/add", empresa);
-  }
-  
-  alterar(empresa): Observable<Empresa> {
-    return this.http.put<Empresa>(url + '/update', empresa);
-  }
-  
-  apagar(id: number): Observable<any> {
-    return this.http.delete(url + "/delete?id=" + id);
-  }
-
+ 
 } 
