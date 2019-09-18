@@ -17,7 +17,7 @@ export class ProdutoCadastroComponent implements OnInit {
 
   produto: Produto = new Produto();
 
-  empresa: Empresa[] = [];
+  empresas: Empresa[] = [];
   idEmpresa: string = '';
 
   categorias: Categoria[] = [];
@@ -46,7 +46,7 @@ export class ProdutoCadastroComponent implements OnInit {
 
   obterTodosEmpresa() {
     this.empresaService.obterTodos().subscribe(x => {
-      this.empresa = x;
+      this.empresas = x;
     })
 
   }

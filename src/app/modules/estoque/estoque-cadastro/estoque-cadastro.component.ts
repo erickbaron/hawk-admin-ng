@@ -18,10 +18,10 @@ export class EstoqueCadastroComponent implements OnInit {
 
   estoque: Estoque = new Estoque();
 
-  empresa: Empresa[] = [];
+  empresas: Empresa[] = [];
   idEmpresa: string = '';
 
-  produto: Produto[] = [];
+  produtos: Produto[] = [];
   idProduto: string= '';
 
   constructor(
@@ -37,7 +37,7 @@ export class EstoqueCadastroComponent implements OnInit {
 
   obterTodosEmpresa() {
     this.empresaService.obterTodos().subscribe(x => {
-      this.empresa = x;
+      this.empresas = x;
     })
   }
   selecionadoEmpresa(event) {
@@ -46,7 +46,7 @@ export class EstoqueCadastroComponent implements OnInit {
 
   obterTodosProduto() {
     this.produtoService.obterTodos().subscribe(x => {
-      this.produto = x;
+      this.produtos = x;
     })
   }
 
