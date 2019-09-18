@@ -26,6 +26,7 @@ import { EstoqueCadastroComponent } from './modules/estoque/estoque-cadastro/est
 import { EstoqueIndexComponent } from './modules/estoque/estoque-index/estoque-index.component';
 
 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelPropagation: false

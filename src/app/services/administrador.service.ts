@@ -11,7 +11,7 @@ const url = environment.url + '/admin'
 })
 export class AdministradorService {
 
-  constructor(private htt: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   
 }
