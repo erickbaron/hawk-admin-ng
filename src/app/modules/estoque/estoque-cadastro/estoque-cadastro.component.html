@@ -15,14 +15,18 @@
         </ng-select>
       </div>
 
-    <label for="campo-tipo" class="mt-2">Tipo</label>
-    <input type="" class="form-control" [(ngModel)]="estoque.tipo">
-  
-    <label for="campo-quantidade" class="mt-1">Quantidade</label>
-    <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
-  
-    <label for="campo-data" class="mt-1">Data de Entrada</label>
-    <input type="date" class="form-control" [(ngModel)]="estoque.dataEntrada">
+      <div class="col-6">
+        <label >Tipo</label>
+        <ng-select [items]="tipos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdTipo"
+          (open)="obterTodosTipo()" (change)="selecionadoTipo($event)">
+        </ng-select>
+      </div>
+
+      <div class="col-6">
+        <label for="campo-quantidade" >Quantidade</label>
+        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
+      </div>
+      
   </div>
 
 
