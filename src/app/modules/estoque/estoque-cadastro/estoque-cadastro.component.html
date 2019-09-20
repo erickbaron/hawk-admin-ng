@@ -1,22 +1,35 @@
 <div class="form-group">
 
-    <label for="campo-empresa">Empresa</label>
-    <input class="form-control" name="nome-empresa" [(ngModel)]="estoque.empresaId">
+  <div class="row">
+    <div class="col-6">
+      <label for="campo-empresa">Empresa</label>
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdEmpresa"
+        (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
+      </ng-select>
+    </div>
+    
+    <div class="col-6">
+        <label >Produto</label>
+        <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdProduto"
+          (open)="obterTodosProduto()" (change)="selecionadoProduto($event)">
+        </ng-select>
+    </div>
 
-    <label for="campo-nome">Produto</label>
-    <input class="form-control" name="nome-produto" [(ngModel)]="estoque.produtoId">
+    <div class="col-6">
+        <label for="campo-tipo">Entrada/Saida</label>
+    	<input type="" class="form-control" [(ngModel)]="estoque.entrada">
+    </div>
 
-    <label for="campo-tipo">Entrada/Saida</label>
-    <input type="" class="form-control" [(ngModel)]="estoque.entrada">
+    <div class="col-6">
+        <label for="campo-quantidade" >Quantidade</label>
+        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
+    </div>
+      
+</div>
+    
 
-    <label for="campo-quantidade">Quantidade</label>
-    <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
 
-    <label for="campo-data">Data de Entrada</label>
-    <input type="date" class="form-control" [(ngModel)]="estoque.dataEntrada">
 
-  </div> 
-  <button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-  <button class="btn btn-raised btn-success pull-right mr-2" (click)="salvar()">Salvar</button>
-
-  
+</div>
+<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
+<button class="btn btn-raised btn-success pull-right mr-2" (click)="salvar()">Salvar</button>

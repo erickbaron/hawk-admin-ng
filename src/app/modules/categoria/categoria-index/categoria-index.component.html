@@ -1,4 +1,4 @@
-<a routerLink="/categoria/cadastro" class="btn btn-raised btn-primary icon-plus pull-right"> Nova Categoria</a>
+<a routerLink="/categoria/cadastro" class="btn btn-raised btn-primary icon-plus pull-right"> Cadastro de Categoria</a>
 
 <table class="table table-striped table-hover table-bordered">
   <thead>
@@ -16,6 +16,7 @@
         <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/categoria/editar/{{categoria.id}}"> Editar</button>
         <button class="btn btn-raised btn-danger icon-trash" 
         (click)="apagar(categoria.id)"> Apagar</button>
+
       </td>
     </tr>
   </tbody>

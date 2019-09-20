@@ -18,7 +18,7 @@ export class EstoqueService {
   }
 
   obterPeloId(id: number): Observable<any> {
-  return this.http.get<any>(url + "/obterpeloid?id=" + id);
+    return this.http.get<any>(url + "/obterpeloid?id=" + id); 
 }
 
   alterar(estoque): Observable<Estoque> {
@@ -32,4 +32,9 @@ export class EstoqueService {
   apagar(id: number): Observable<any> {
     return this.http.delete(url + "/delete?id=" + id);
   }
+
+  alterar(estoque): Observable<Estoque> {
+    return this.http.put<Estoque>(url + '/update', estoque);
+  }
+
 }
