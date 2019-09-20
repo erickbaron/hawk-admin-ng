@@ -1,73 +1,85 @@
 <h3 class="text-center">Cadastrar Produto</h3>
 <div class="form-group">
-    <label for="campo-nome">Nome <small class="danger">*</small></label>
-    <input type="text" class="form-control" [(ngModel)]="produto.nome">
-  </div>
-  
+
+  <label for="campo-nome">Nome</label>
+  <input type="text" class="form-control" [(ngModel)]="produto.nome">
+</div>
+
 <div class="row">
   <div class="col-6">
+    <label for="campo-categoria">Categoria</label>
+      <ng-select [items]="categorias" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="idCategoria"
+        (open)="obterTodosCategoria()" (change)="selecionadoCategoria($event)">
+      </ng-select>
+  </div>
+
+  <div class="col-6">
     <div class="form-group">
+
         <label for="campo-categoria">Categoria <small class="danger">*</small></label>
         <input type="number" class="form-control" [(ngModel)]="produto.categoriaId">
       </div>
     </div>
     <div class="col-6">
         <div class="form-group">
-          <label for="campo-empresa">Empresa <small class="danger">*</small></label>
-          <input type="number" class="form-control" [(ngModel)]="produto.empresaId">
-        </div>
-      </div>
+          
+      <label for="campo-empresa">Empresa</label>
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione"[(ngModel)]="idEmpresa"
+        (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
+      </ng-select>
     </div>
-
-<div class="row">
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-valor-custo">Valor Custo</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.valorCusto">
-        </div> 
-  </div>
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-valor-venda">Valor Venda</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.valorVenda">
-        </div>
-  </div>
-</div>
-
- <div class="form-group">
-   <label for="campo-descricao">Descrição</label>
-   <textarea class="form-control" [(ngModel)]="produto.descricao"></textarea>
- </div>
-
-<div class="row">
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-peso">Peso</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.peso">
-        </div>
-  </div>
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-altura">Altura</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.altura">
-        </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-6">
-      <div class="form-group">
-          <label for="campo-largura">Largura</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.largura">
-        </div>
+    <div class="form-group">
+      <label for="campo-valor-custo">Valor Custo</label>
+      <input type="number" class="form-control" [(ngModel)]="produto.valorCusto">
+    </div>
   </div>
   <div class="col-6">
-      <div class="form-group">
-          <label for="campo-comprimento">Comprimento</label>
-          <input type="number" class="form-control" [(ngModel)]="produto.comprimento">
-        </div>
+    <div class="form-group">
+      <label for="campo-valor-venda">Valor Venda</label>
+      <input type="number" class="form-control" [(ngModel)]="produto.valorVenda">
+    </div>
   </div>
 </div>
 
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()"> Cancelar</button>
-  <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()"> Salvar</button>
+<div class="form-group">
+  <label for="campo-descricao">Descrição</label>
+  <textarea class="form-control" [(ngModel)]="produto.descricao"></textarea>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="campo-peso">Peso</label>
+      <input type="number" class="form-control" [(ngModel)]="produto.peso">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="campo-altura">Altura</label>
+      <input type="number" class="form-control" [(ngModel)]="produto.altura">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="campo-largura">Largura</label>
+      <input type="number" class="form-control" [(ngModel)]="produto.largura">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="campo-comprimento">Comprimento</label>
+      <input type="number" class="form-control" [(ngModel)]="produto.comprimento">
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
+<button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>

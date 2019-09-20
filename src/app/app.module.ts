@@ -8,11 +8,12 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
-import { 
-    PerfectScrollbarModule, 
-    PERFECT_SCROLLBAR_CONFIG, 
-    PerfectScrollbarConfigInterface
-  } from 'ngx-perfect-scrollbar';
+
+import {
+  PerfectScrollbarModule,
+  PERFECT_SCROLLBAR_CONFIG,
+  PerfectScrollbarConfigInterface
+} from 'ngx-perfect-scrollbar';
 
 import { AppComponent } from './app.component';
 import { ContentLayoutComponent } from "./layouts/content/content-layout.component";
@@ -20,44 +21,48 @@ import { FullLayoutComponent } from "./layouts/full/full-layout.component";
 
 import { AuthService } from './shared/auth/auth.service';
 import { AuthGuard } from './shared/auth/auth-guard.service';
+import { FormsModule } from '@angular/forms';
+import { EstoqueCadastroComponent } from './modules/estoque/estoque-cadastro/estoque-cadastro.component';
+import { EstoqueIndexComponent } from './modules/estoque/estoque-index/estoque-index.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-    suppressScrollX: true,
-    wheelPropagation: false
-  };
-  
-  export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
-  }
+  suppressScrollX: true,
+  wheelPropagation: false
+};
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
 
 
-  @NgModule({
-    declarations: [AppComponent, FullLayoutComponent, ContentLayoutComponent],
-    imports: [
-      BrowserAnimationsModule,
-      AppRoutingModule,
-      SharedModule,
-      HttpClientModule,
-      NgbModule.forRoot(),
-      TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: createTranslateLoader,
-          deps: [HttpClient]
-        }
-      }),
-      PerfectScrollbarModule
-    ],
-    providers: [
-      AuthService,
-      AuthGuard,
-      {
-        provide: PERFECT_SCROLLBAR_CONFIG,
-        useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-      },
-      { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
-    ],
-    bootstrap: [AppComponent]
-  })
-  export class AppModule {}
-  
+@NgModule({
+  declarations: [AppComponent, FullLayoutComponent, ContentLayoutComponent],
+  imports: [
+    BrowserAnimationsModule,
+    FormsModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    NgbModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+    PerfectScrollbarModule
+  ],
+  providers: [
+    AuthService,
+    AuthGuard,
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    },
+    { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

@@ -4,10 +4,10 @@ import { Produto } from './produto';
 
 export class Estoque {
     id: number;
-    produto: Produto;
-    empresa: Empresa;
+    produtoId: Produto;
+    empresaId: Empresa;
     quantidade: number;
     tipo: boolean;
-    data_entrada: string;
-    registro_ativo: boolean;
+    dataEntrada: string;
+    registroAtivo: boolean;
 }
