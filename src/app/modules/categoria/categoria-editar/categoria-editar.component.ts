@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from 'app/services/categoria.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'app/models/categoria';
 
 @Component({
@@ -9,13 +9,20 @@ import { Categoria } from 'app/models/categoria';
   styles: []
 })
 export class CategoriaEditarComponent implements OnInit {
+  returnUrl: string;
+
   categoria: Categoria = new Categoria;
+
   id: number
   constructor(
     private service: CategoriaService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
+
+    categorias: Categoria[] = [];
 
   ngOnInit() {
+    this.returnUrl = '/categoria'
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.obterPeloId(this.id);
   }
@@ -26,8 +33,17 @@ export class CategoriaEditarComponent implements OnInit {
     })
   }
 
+  atualizarDados(){
+    this.service.obterTodos().subscribe(x => {
+      this.categorias = x;
+    }, error => { 
+      alert("ERROR");
+    });
+  }
 
   alterar(categoria) {
+    this.router.navigateByUrl(this.returnUrl)
+    this.atualizarDados();
     this.service.alterar(categoria).subscribe( x => {
       alert("Registro Alterado com Sucesso")
     },
@@ -35,5 +51,10 @@ export class CategoriaEditarComponent implements OnInit {
       alert("Não foi possível alterar")
     })
   }
+
+  cancelar() {
+    this.router.navigateByUrl(this.returnUrl)
+  }
+
 
 }

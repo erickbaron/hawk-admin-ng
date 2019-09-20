@@ -1,19 +1,19 @@
 <h3 class="text-center">Cadastrar Produto</h3>
 <div class="form-group">
-    <label for="campo-nome">Nome</label>
+    <label for="campo-nome">Nome <small class="danger">*</small></label>
     <input type="text" class="form-control" [(ngModel)]="produto.nome">
   </div>
   
 <div class="row">
   <div class="col-6">
     <div class="form-group">
-        <label for="campo-categoria">Categoria</label>
+        <label for="campo-categoria">Categoria <small class="danger">*</small></label>
         <input type="number" class="form-control" [(ngModel)]="produto.categoriaId">
       </div>
     </div>
     <div class="col-6">
         <div class="form-group">
-          <label for="campo-empresa">Empresa</label>
+          <label for="campo-empresa">Empresa <small class="danger">*</small></label>
           <input type="number" class="form-control" [(ngModel)]="produto.empresaId">
         </div>
       </div>
@@ -69,5 +69,5 @@
   </div>
 </div>
 
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-  <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>
+<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()"> Cancelar</button>
+  <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()"> Salvar</button>

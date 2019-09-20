@@ -1,7 +1,7 @@
-<h3 class="text-center">Cadastrar Produto</h3>
+<h3 class="text-center">Cadastrar Categoria</h3>
 <div class="form-group">
-  <label for="campo-nome">Nome</label>
+  <label for="campo-nome" class="required">Nome <small class="danger">*</small></label>
   <input type="text" class="form-control" [(ngModel)]="categoria.nome">
 </div> 
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-<button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>
+<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()"> Cancelar</button>
+<button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()"> Salvar</button>
