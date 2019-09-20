@@ -14,6 +14,7 @@ export class Produto {
     largura: number;
     comprimento: number;
     registroAtivo: boolean;
+    imagemURL: string;
     empresaId: Empresa;
     categoriaId: Categoria;
     avaliacaoProduto: AvaliacaoProduto;

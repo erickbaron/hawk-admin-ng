@@ -8,9 +8,9 @@
 <div class="row">
   <div class="col-6">
     <label for="campo-categoria">Categoria</label>
-      <ng-select [items]="categorias" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="idCategoria"
-        (open)="obterTodosCategoria()" (change)="selecionadoCategoria($event)">
-      </ng-select>
+    <ng-select [items]="categorias" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="idCategoria"
+      (open)="obterTodosCategoria()" (change)="selecionadoCategoria($event)">
+    </ng-select>
   </div>
 
   <div class="col-6">
@@ -24,7 +24,7 @@
         <div class="form-group">
           
       <label for="campo-empresa">Empresa</label>
-      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione"[(ngModel)]="idEmpresa"
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="idEmpresa"
         (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
@@ -52,16 +52,23 @@
 </div>
 
 <div class="row">
-  <div class="col-6">
+  <div class="col-4">
     <div class="form-group">
       <label for="campo-peso">Peso</label>
       <input type="number" class="form-control" [(ngModel)]="produto.peso">
     </div>
   </div>
-  <div class="col-6">
+  <div class="col-4">
     <div class="form-group">
       <label for="campo-altura">Altura</label>
       <input type="number" class="form-control" [(ngModel)]="produto.altura">
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="form-group">
+      <label for="campo-largura">Largura</label>
+      <input type="number" class="form-control" [(ngModel)]="produto.largura">
     </div>
   </div>
 </div>
@@ -69,17 +76,24 @@
 <div class="row">
   <div class="col-6">
     <div class="form-group">
-      <label for="campo-largura">Largura</label>
-      <input type="number" class="form-control" [(ngModel)]="produto.largura">
-    </div>
-  </div>
-  <div class="col-6">
-    <div class="form-group">
       <label for="campo-comprimento">Comprimento</label>
       <input type="number" class="form-control" [(ngModel)]="produto.comprimento">
     </div>
   </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="arquivo">Imagens</label>
+      <form method="post" enctype="multipart/form-data" asp-controller="Produto" asp-action="Upload">
+        <div class="custom-file">
+          <input type="file" id="arquivo" name="arquivo" class="custom-file-input" [(ngModel)]="produto.imagemUrl">
+          <label for="arquivo" class="custom-file-label">Arquivo</label>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+
+<img src="http://localhost:5000/wwwroot/imagens/{{produto.ImagemURL}}">
 
 <button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
 <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>

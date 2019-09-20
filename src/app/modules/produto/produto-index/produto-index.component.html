@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <td>Código</td>
+      <td>Imagem</td>
       <td>Nome</td>
       <td>Valor Custo</td>
       <td>Valor Venda</td>
@@ -18,6 +19,9 @@
   <tbody>
     <tr *ngFor="let produto of produtos">
       <td>{{produto.id}}</td>
+      <td>
+        <img src="http://localhost:5000/hawk/hawk.api/wwwroot/images/{{produto.imagemURL}}">
+      </td>
       <td>{{produto.nome}}</td>
       <td>{{produto.valorCusto}}</td>
       <td>{{produto.valorVenda}}</td>
