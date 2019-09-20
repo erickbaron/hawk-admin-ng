@@ -7,7 +7,7 @@ export class Estoque {
     produtoId: Produto;
     empresaId: Empresa;
     quantidade: number;
-    tipo: boolean;
+    entrada: boolean;
     dataEntrada: string;
     registroAtivo: boolean;
 }

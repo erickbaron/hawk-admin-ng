@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'environments/environment';
 import { Estoque } from 'app/models/estoque';
 
-
 const url = environment.url + "/estoques"
 @Injectable({
   providedIn: 'root'
@@ -20,6 +19,10 @@ export class EstoqueService {
 
   obterPeloId(id: number): Observable<any> {
     return this.http.get<any>(url + "/obterpeloid?id=" + id); 
+}
+
+  alterar(estoque): Observable<Estoque> {
+    return this.http.put<Estoque>(url + '/update', estoque);
   }
 
   adicionar(estoque: Estoque): Observable<any> {

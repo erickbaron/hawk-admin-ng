@@ -1,4 +1,4 @@
-<a routerLink="/produto/cadastro" class="btn btn-raised btn-primary icon-plus pull-rigth"> Novo Produto</a>
+<a routerLink="/produto/cadastro" class="btn btn-raised btn-primary icon-plus pull-right"> Cadastro de Produto</a>
 
 <table class="table table-striped table-hover table-bordered">
   <thead>
@@ -31,9 +31,9 @@
       <td>{{produto.largura}}</td>
       <td>{{produto.comprimento}}</td>
       <td>
-        <a class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/produto/editar/{{produto.id}}"> Editar</a>
-        <a class="btn btn-raised btn-danger icon-trash"
-        (click)="apagar(produto.id)"> Apagar</a>
+        <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/produto/editar/{{produto.id}}"> Editar</button>
+        <button class="btn btn-raised btn-danger icon-trash"
+        (click)="apagar(produto.id)"> Apagar</button>
       </td>
     </tr>
   </tbody>

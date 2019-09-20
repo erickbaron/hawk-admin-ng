@@ -13,21 +13,20 @@
         <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdProduto"
           (open)="obterTodosProduto()" (change)="selecionadoProduto($event)">
         </ng-select>
-      </div>
+    </div>
 
-      <div class="col-6">
-        <label >Tipo</label>
-        <ng-select [items]="tipos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdTipo"
-          (open)="obterTodosTipo()" (change)="selecionadoTipo($event)">
-        </ng-select>
-      </div>
+    <div class="col-6">
+        <label for="campo-tipo">Entrada/Saida</label>
+    	<input type="" class="form-control" [(ngModel)]="estoque.entrada">
+    </div>
 
-      <div class="col-6">
+    <div class="col-6">
         <label for="campo-quantidade" >Quantidade</label>
         <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
-      </div>
+    </div>
       
-  </div>
+</div>
+    
 
 
 

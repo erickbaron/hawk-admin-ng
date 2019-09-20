@@ -9,8 +9,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
+
 @NgModule({
-  declarations: [EstoqueIndexComponent , EstoqueCadastroComponent],
+  declarations: [EstoqueIndexComponent , EstoqueCadastroComponent, EstoqueEditarComponent],
   imports: [
     CommonModule,
     FormsModule,

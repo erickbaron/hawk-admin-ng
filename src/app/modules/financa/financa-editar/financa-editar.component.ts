@@ -1,52 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from 'app/services/produto.service';
+import { FinancaService } from 'app/services/financa.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Produto } from 'app/models/produto';
+import { Financa } from 'app/models/financa';
 
 @Component({
-  selector: 'app-produto-editar',
-  templateUrl: './produto-editar.component.html',
+  selector: 'app-financa-editar',
+  templateUrl: './financa-editar.component.html',
   styles: []
 })
-export class ProdutoEditarComponent implements OnInit {
+export class FinancaEditarComponent implements OnInit {
   returnUrl: string;
 
-  produto: Produto = new Produto;
+  financa: Financa = new Financa;
 
   id: number
-
   constructor(
-    private service: ProdutoService,
+    private service: FinancaService,
     private route: ActivatedRoute,
     private router: Router) { }
 
-    produtos: Produto[] = [];
+    financas: Financa[] = [];
 
   ngOnInit() {
-    this.returnUrl = '/produto'
+    this.returnUrl = '/financa'
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.obterPeloId(this.id);
   }
 
   obterPeloId(id) {
     this.service.obterPeloId(id).subscribe(x => {
-      this.produto = x;
+      this.financa = x;
     })
   }
 
-
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
-      this.produtos = x;
+      this.financas = x;
     }, error => { 
       alert("ERROR");
     });
   }
 
-  alterar(produto) {
+  alterar(financa) {
     this.router.navigateByUrl(this.returnUrl)
-    this.service.alterar(produto).subscribe( x => {
-      this.atualizarDados()
+    this.atualizarDados();
+    this.service.alterar(financa).subscribe( x => {
       alert("Registro Alterado com Sucesso")
     },
     error => {
@@ -57,5 +55,6 @@ export class ProdutoEditarComponent implements OnInit {
   cancelar() {
     this.router.navigateByUrl(this.returnUrl)
   }
+
 
 }
