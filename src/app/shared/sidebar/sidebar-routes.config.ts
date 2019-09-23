@@ -22,14 +22,13 @@ export const ROUTES: RouteInfo[] = [
             { path: '/estoque/', title: 'Lista', icon: 'list', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] },
             { path: '/estoque/cadastro', title: 'Cadastro', icon: 'plus-square', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] },
         ]
+    },    
+    {
+        path: '', title: 'Empresa', icon: 'ft-align-left', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
+        submenu: [
+            { path: '/empresa/', title: 'Lista', icon: 'list', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] }
+        ]
     },
-    
-    // {
-    //     path: '', title: 'Finanças', icon: 'ft-align-left', class: 'has-sub', badge: '', badgeClass: '', isExternalLink: false,
-    //     submenu: [
-    //         { path: '/financa/', title: 'Lista', icon: 'list', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] }
-    //     ]
-    // },
         
 
     { path: 'https://pixinvent.com/apex-angular-4-bootstrap-admin-template/documentation', title: 'Documentation', icon: 'ft-folder', class: '', badge: '', badgeClass: '', isExternalLink: true, submenu: [] }

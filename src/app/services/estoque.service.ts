@@ -21,11 +21,7 @@ export class EstoqueService {
     return this.http.get<any>(url + "/obterpeloid?id=" + id); 
 }
 
-  alterar(estoque): Observable<Estoque> {
-    return this.http.put<Estoque>(url + '/update', estoque);
-  }
-
-  adicionar(estoque: Estoque): Observable<any> {
+    adicionar(estoque: Estoque): Observable<any> {
     return this.http.post(url + "/add", estoque);
   }
 

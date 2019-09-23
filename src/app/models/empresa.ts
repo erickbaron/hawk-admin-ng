@@ -1,18 +1,12 @@
-import { Cidade } from './cidade';
-import { AvaliacaoEmpresa } from './avaliacao-empresa';
+import { Usuario } from './usuario';
 
 
 export class Empresa {
     id: number;
-    nome_empresa: string;
+    nome: string;
     cnpj: string;
-    celular: string;
-    cep: string;
-    logradouro: string;
-    complemento: string;
-    numero: string;
+    telefone: string;
     ramo: string;
-    registro_ativo: boolean;
-    cidade: Cidade;
-    avalicao_empresa: AvaliacaoEmpresa;
+    registroAtivo: boolean;
+    usuarioId: Usuario;
 }

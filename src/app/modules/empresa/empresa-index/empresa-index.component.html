@@ -1,0 +1,30 @@
+<a routerLink="/empresa/cadastro" class="btn btn-raised btn-primary icon-plus pull-right"> Cadastro de Empresa</a>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <td>Código</td>
+      <td>Nome</td>
+      <td>CNPJ</td>
+      <td>Contato</td>
+      <td>Ramo</td>
+      <td>Ação</td>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empresa of empresas">
+      <td>{{empresa.id}}</td>
+      <td>{{empresa.nome}}</td>
+      <td>{{empresa.cnpj}}</td>
+      <td>{{empresa.telefone}}</td>
+      <td>{{empresa.ramo}}</td>
+      
+      <td>
+        <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
+        <button class="btn btn-raised btn-danger icon-trash"
+        (click)="apagar(empresa.id)"> Apagar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

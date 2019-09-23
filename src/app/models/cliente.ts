@@ -1,4 +1,4 @@
-import { Login } from './login';
+import { Usuario } from './usuario';
 import { Cidade } from './cidade';
 
 
@@ -6,13 +6,13 @@ export class Cliente {
      id: number;
      nome: string;
      cpf: string;
-     data_nascimento: string;
+     dataNascimento: string;
      numero: number;
      complemento: string;
      logradouro: string;
      cep: string;
      celular: string;
-     registro_ativo: boolean;
-     login: Login;
+     registroAtivo: boolean;
+     login: Usuario;
      cidade: Cidade;
 }

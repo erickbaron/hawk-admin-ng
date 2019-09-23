@@ -14,12 +14,13 @@ export class EstoqueEditarComponent implements OnInit {
   id: number;
 
   estoque: Estoque = new Estoque;
-
+  
   constructor(
     private service: EstoqueService,
     private route: ActivatedRoute,
     private router: Router) { }
-
+    estoques:   Estoque[] = [];
+    
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.obterPeloId(this.id);
@@ -46,10 +47,17 @@ export class EstoqueEditarComponent implements OnInit {
       this.estoque = x;
     })
   }
-
+  atualizarDados(){
+    this.service.obterTodos().subscribe(x => {
+      this.estoques = x;
+    }, error => { 
+      alert("ERROR");
+    });
+  }
 
   alterar(estoque) {
     this.service.alterar(estoque).subscribe( x => {
+      this.atualizarDados();
       alert("Registro Alterado com Sucesso")
     },
     error => {

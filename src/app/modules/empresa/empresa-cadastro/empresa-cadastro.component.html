@@ -1,0 +1,36 @@
+<h3 class="text-center">Cadastrar Empresa</h3>
+<div class="form-group">
+  <label for="campo-nome">Nome</label>
+  <input type="text" class="form-control" [(ngModel)]="empresa.nome">
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <label for="campo-cnpj">CNPJ</label>
+    <input type="text" class="form-control" [(ngModel)]="empresa.cnpj">
+  </div>
+
+  <div class="col-3">
+    <div class="form-group">
+      <label for="campo-contato">Contato <small class="danger">*</small></label>
+      <input type="text" class="form-control" [(ngModel)]="empresa.telefone">
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="form-group">
+      <label for="campo-ramo">Ramo</label>
+      <input type="text" class="form-control" [(ngModel)]="empresa.ramo">
+    </div>
+  </div>
+
+  <div class="col-2">
+    <div class="form-group">
+      <label for="campo-id-usuario">id usuario</label>
+      <input type="number" class="form-control" [(ngModel)]="empresa.usuarioId">
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
+<button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>

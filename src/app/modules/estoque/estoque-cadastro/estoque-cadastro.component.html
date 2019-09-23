@@ -17,7 +17,11 @@
 
     <div class="col-6">
         <label for="campo-tipo">Entrada/Saida</label>
-    	<input type="" class="form-control" [(ngModel)]="estoque.entrada">
+        <select class="form-control" placeholder="Selecione">
+          <option value="Entrada" class="form-control">Entrada</option>
+          <option value="Saída" class="form-control" [(ngModel)]="estoque.entrada">Saída</option>
+        </select>
+    	  <!--<input type="" class="form-control" [(ngModel)]="estoque.entrada">-->
     </div>
 
     <div class="col-6">

@@ -6,6 +6,7 @@ import { EstoqueIndexComponent } from './estoque-index/estoque-index.component';
 import { EstoqueCadastroComponent } from './estoque-cadastro/estoque-cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { EstoqueEditarComponent } from './estoque-editar/estoque-editar.component';
 
 
 

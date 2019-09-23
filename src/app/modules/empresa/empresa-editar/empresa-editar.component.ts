@@ -1,50 +1,51 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from 'app/services/categoria.service';
+import { EmpresaService } from 'app/services/empresa.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Categoria } from 'app/models/categoria';
+import { Empresa } from 'app/models/empresa';
 
 @Component({
-  selector: 'app-categoria-editar',
-  templateUrl: './categoria-editar.component.html',
+  selector: 'app-empresa-editar',
+  templateUrl: './empresa-editar.component.html',
   styles: []
 })
-export class CategoriaEditarComponent implements OnInit {
+export class EmpresaEditarComponent implements OnInit {
   returnUrl: string;
 
-  categoria: Categoria = new Categoria;
+  empresa: Empresa = new Empresa;
 
   id: number
+
   constructor(
-    private service: CategoriaService,
+    private service: EmpresaService,
     private route: ActivatedRoute,
     private router: Router) { }
 
-    categorias: Categoria[] = [];
-
+    empresas: Empresa[] = [];
   ngOnInit() {
-    this.returnUrl = '/categoria'
+    this.returnUrl = '/empresa'
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.obterPeloId(this.id);
   }
 
   obterPeloId(id) {
     this.service.obterPeloId(id).subscribe(x => {
-      this.categoria = x;
+      this.empresa = x;
     })
   }
 
+
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
-      this.categorias = x;
+      this.empresas = x;
     }, error => { 
       alert("ERROR");
     });
   }
 
-  alterar(categoria) {
+  alterar(empresa) {
     this.router.navigateByUrl(this.returnUrl)
-    this.service.alterar(categoria).subscribe( x => {
-      this.atualizarDados();
+    this.atualizarDados()
+    this.service.alterar(empresa).subscribe( x => {
       alert("Registro Alterado com Sucesso")
     },
     error => {
@@ -55,6 +56,5 @@ export class CategoriaEditarComponent implements OnInit {
   cancelar() {
     this.router.navigateByUrl(this.returnUrl)
   }
-
 
 }
