@@ -43,9 +43,9 @@ export class EmpresaEditarComponent implements OnInit {
   }
 
   alterar(empresa) {
-    this.router.navigateByUrl(this.returnUrl)
-    this.atualizarDados()
     this.service.alterar(empresa).subscribe( x => {
+    this.router.navigateByUrl(this.returnUrl)
+      this.atualizarDados()
       alert("Registro Alterado com Sucesso")
     },
     error => {
