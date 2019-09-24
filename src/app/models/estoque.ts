@@ -8,6 +8,6 @@ export class Estoque {
     empresaId: Empresa;
     quantidade: number;
     entrada: string;
-    dataEntrada: string;
+    dataEntrada: Date;
     registroAtivo: boolean;
 }
