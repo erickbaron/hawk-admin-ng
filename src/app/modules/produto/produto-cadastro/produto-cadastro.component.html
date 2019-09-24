@@ -8,23 +8,15 @@
 <div class="row">
   <div class="col-6">
     <label for="campo-categoria">Categoria</label>
-    <ng-select [items]="categorias" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="idCategoria"
+    <ng-select [items]="categorias" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="produto.categoriaId"
       (open)="obterTodosCategoria()" (change)="selecionadoCategoria($event)">
     </ng-select>
   </div>
-
   <div class="col-6">
     <div class="form-group">
 
-        <label for="campo-categoria">Categoria <small class="danger">*</small></label>
-        <input type="number" class="form-control" [(ngModel)]="produto.categoriaId">
-      </div>
-    </div>
-    <div class="col-6">
-        <div class="form-group">
-          
       <label for="campo-empresa">Empresa</label>
-      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="idEmpresa"
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="produto.empresaId"
         (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
@@ -81,11 +73,11 @@
     </div>
   </div>
   <div class="col-6">
-    <div class="form-group">
+    <div class="form-group ">
       <label for="arquivo">Imagens</label>
-      <form method="post" enctype="multipart/form-data" asp-controller="Produto" asp-action="Upload">
+      <form method="post" enctype="multipart/form-data" asp-controller="produto" asp-action="Upload">
         <div class="custom-file">
-          <input type="file" id="arquivo" name="arquivo" class="custom-file-input" [(ngModel)]="produto.imagemUrl">
+          <input type="file" id="arquivo" name="arquivo" class="custom-file-input"  [(ngModel)]="produto.nomeArquivo">
           <label for="arquivo" class="custom-file-label">Arquivo</label>
         </div>
       </form>
@@ -93,7 +85,6 @@
   </div>
 </div>
 
-<img src="http://localhost:5000/wwwroot/imagens/{{produto.ImagemURL}}">
 
 <button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
 <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>

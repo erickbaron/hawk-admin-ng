@@ -18,10 +18,10 @@ export class ProdutoCadastroComponent implements OnInit {
   produto: Produto = new Produto();
 
   empresas: Empresa[] = [];
-  idEmpresa: string = '';
+  empresaId: string = '';
 
   categorias: Categoria[] = [];
-  idCategoria: string = '';
+  categoriaId: string = '';
 
   constructor(
     private service: ProdutoService,
@@ -40,7 +40,7 @@ export class ProdutoCadastroComponent implements OnInit {
     })
   }
   selecionadoCategoria(event) {
-    this.idCategoria = event == undefined ? 0 : event.id;
+    this.categoriaId = event == undefined ? 0 : event.id;
   }
 
 
@@ -51,7 +51,7 @@ export class ProdutoCadastroComponent implements OnInit {
 
   }
   selecionadoEmpresa(event) {
-    this.idEmpresa = event == undefined ? 0 : event.id;
+    this.empresaId = event == undefined ? 0 : event.id;
   }
 
 
@@ -67,6 +67,7 @@ export class ProdutoCadastroComponent implements OnInit {
       })
   }
 
+  
   cancelar() {
     this.router.navigateByUrl(this.returnUrl)
   }
