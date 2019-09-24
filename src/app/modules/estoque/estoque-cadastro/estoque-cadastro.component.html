@@ -3,30 +3,30 @@
   <div class="row">
     <div class="col-6">
       <label for="campo-empresa">Empresa</label>
-      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdEmpresa"
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.empresaID"
         (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
     
     <div class="col-6">
         <label >Produto</label>
-        <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdProduto"
+        <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.produtoId"
           (open)="obterTodosProduto()" (change)="selecionadoProduto($event)">
         </ng-select>
     </div>
 
     <div class="col-6">
         <label for="campo-tipo">Entrada/Saida</label>
-        <select class="form-control" placeholder="Selecione">
+        <select class="form-control" placeholder="Selecione" [(ngModel)]="estoque.entrada">
           <option value="Entrada" class="form-control">Entrada</option>
-          <option value="Saída" class="form-control" [(ngModel)]="estoque.entrada">Saída</option>
+          <option value="Saída" class="form-control" >Saída</option>
         </select>
     	  <!--<input type="" class="form-control" [(ngModel)]="estoque.entrada">-->
     </div>
 
     <div class="col-6">
         <label for="campo-quantidade" >Quantidade</label>
-        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
+        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade" placeholder="Selecione">
     </div>
       
 </div>
