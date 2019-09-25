@@ -7,6 +7,13 @@ export class Empresa {
     cnpj: string;
     telefone: string;
     ramo: string;
+    cep: string;
+    logradouro: string;
+    complemento: string;
+    numero: string;
+    cidade: string;
+    estado: string;
+
     registroAtivo: boolean;
     usuarioId: Usuario;
 }
