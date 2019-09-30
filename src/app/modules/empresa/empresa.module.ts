@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { TextMaskModule } from 'angular2-text-mask';
 import { EmpresaRoutingModule } from './empresa-routing.module';
 import { EmpresaIndexComponent } from './empresa-index/empresa-index.component';
 import { EmpresaCadastroComponent } from './empresa-cadastro/empresa-cadastro.component';
@@ -14,6 +14,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CommonModule,
     FormsModule,
     NgSelectModule,
+    TextMaskModule,
     EmpresaRoutingModule
   ]
 })

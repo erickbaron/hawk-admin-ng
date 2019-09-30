@@ -1,58 +1,63 @@
-<a routerLink="/empresa/cadastro" class="btn btn-raised btn-primary icon-plus pull-right"> Cadastro de Empresa</a>
+<div class="container-fluid">
+  <div class="col-12">
 
-<table class="table table-striped table-hover table-bordered">
-  <thead>
-    <tr>
-      <td>Código</td>
-      <td>Nome</td>
-      <td>CNPJ</td>
-      <td>Contato</td>
-      <td>Ramo</td>
-      <td>Estado</td>
-      <td>Cidade</td>
-      <td>Cep</td>
-      <td>Logradouro</td>
-      <td>Complemento</td>
-      <td>Número</td>
-      <!-- <td>Ação</td> -->
-      <td>Ação</td>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let empresa of empresas">
-      <td>{{empresa.id}}</td>
-      <td>{{empresa.nome}}</td>
-      <td>{{empresa.cnpj}}</td>
-      <td>{{empresa.telefone}}</td>
-      <td>{{empresa.ramo}}</td>
-      <td>{{empresa.estado}}</td>
-      <!-- <td>{{empresa.id}}</td> -->
-      <td>{{empresa.cidade}}</td>
-      <td>{{empresa.cep}}</td>
-      <td>{{empresa.logradouro}}</td>
-      <td>{{empresa.complemento}}</td>
-      <td>{{empresa.numero}}</td>
-      
-      <td>
-        <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
-        <button class="btn btn-raised btn-danger icon-trash"
-        (click)="apagar(empresa.id)"> Apagar</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <button routerLink="/empresa/cadastro" class="btn btn-raised btn-primary icon-plus pull-right"> Cadastro de Empresa</button>
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <td>Código</td>
+          <td>Nome</td>
+          <td>CNPJ</td>
+          <td>Contato</td>
+          <td>Ramo</td>
+          <td>Estado</td>
+          <td>Cidade</td>
+          <td>Cep</td>
+          <td>Logradouro</td>
+          <td>Complemento</td>
+          <td>Número</td>
+          <!-- <td>Ação</td> -->
+          <td>Ação</td>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of empresas">
+          <td>{{empresa.id}}</td>
+          <td>{{empresa.nome}}</td>
+          <td>{{empresa.cnpj}}</td>
+          <td>{{empresa.telefone}}</td>
+          <td>{{empresa.ramo}}</td>
+          <td>{{empresa.estado}}</td>
+          <!-- <td>{{empresa.id}}</td> -->
+          <td>{{empresa.cidade}}</td>
+          <td>{{empresa.cep}}</td>
+          <td>{{empresa.logradouro}}</td>
+          <td>{{empresa.complemento}}</td>
+          <td>{{empresa.numero}}</td>
+
+          <td>
+            <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
+            <button class="btn btn-raised btn-danger icon-trash"
+            (click)="apagar(empresa.id)"> Apagar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <!-- <table class="table table-striped table-hover table-bordered">
   <thead>
     <tr>
       <td>Código</td>
-     
+
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let let empresa of empresas">
-      
+
       <td>
         <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
         <button class="btn btn-raised btn-danger icon-trash"
