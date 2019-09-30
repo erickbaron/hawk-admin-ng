@@ -14,6 +14,7 @@ export class Produto {
     largura: number;
     comprimento: number;
     registroAtivo: boolean;
+    promocao: boolean;
     nomeArquivo: string; 
     nomeHash: string;
     empresaId: Empresa;

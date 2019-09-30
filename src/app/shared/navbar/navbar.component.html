@@ -34,11 +34,6 @@
                     </li>
                     
                     <li class="nav-item" ngbDropdown [placement]="placement">
-                        <a class="nav-link position-relative" id="dropdownBasic2" ngbDropdownToggle>
-                            <i class="ft-bell font-medium-3 blue-grey darken-4"></i>
-                            <span class="notification badge badge-pill badge-danger">4</span>
-                            <p class="d-none">Notifications</p>
-                        </a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="notification-dropdown">
                             <div class="noti-list" [perfectScrollbar]>
                                 <a class="dropdown-item noti-container py-3 border-bottom border-bottom-blue-grey border-bottom-lighten-4">
@@ -84,14 +79,6 @@
                                 <span >My Profile</span>
 
                             </a>
-                            <a class="dropdown-item py-1" href="javascript:;">
-                                <i class="ft-mail mr-2"></i>
-                                <span>My Inbox</span>
-                            </a>
-                            <a class="dropdown-item py-1" href="javascript:;">
-                                <i class="ft-settings mr-2"></i>
-                                <span>Settings</span>
-                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="javascript:;">
                                 <i class="ft-power mr-2"></i>
@@ -99,12 +86,7 @@
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link position-relative notification-sidebar-toggle" (click)="toggleNotificationSidebar();">
-                            <i class="ft-align-left font-medium-3 blue-grey darken-4"></i>
-                            <p class="d-none">Notifications Sidebar</p>
-                        </a>
-                    </li>
+                    
                    
                 </ul>
             </div>
