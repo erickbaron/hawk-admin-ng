@@ -35,9 +35,8 @@
       <td>{{empresa.numero}}</td>
       
       <td>
-        <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
-        <button class="btn btn-raised btn-danger icon-trash"
-        (click)="apagar(empresa.id)"> Apagar</button>
+        <button class="btn btn-raised btn-primary icon-pencil mr-2" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
+        <button class="btn btn-raised btn-danger icon-trash"(click)="apagar(empresa.id)"> Apagar</button>
       </td>
     </tr>
   </tbody>
