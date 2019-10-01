@@ -1,8 +1,6 @@
 <div class="container-fluid">
   <div class="col-12">
-
-    <button routerLink="/empresa/cadastro" class="btn btn-raised btn-primary icon-plus pull-right"> Cadastro de Empresa</button>
-
+    
     <table class="table table-striped table-hover table-bordered">
       <thead>
         <tr>
@@ -19,7 +17,7 @@
           <td>Número</td>
           <!-- <td>Ação</td> -->
           <td>Ação</td>
-
+          
         </tr>
       </thead>
       <tbody>
@@ -36,11 +34,10 @@
           <td>{{empresa.logradouro}}</td>
           <td>{{empresa.complemento}}</td>
           <td>{{empresa.numero}}</td>
-
+          
           <td>
-            <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
-            <button class="btn btn-raised btn-danger icon-trash"
-            (click)="apagar(empresa.id)"> Apagar</button>
+            <button class="btn btn-raised btn-primary icon-pencil mr-2" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
+            <button class="btn btn-raised btn-danger icon-trash"(click)="apagar(empresa.id)"> Apagar</button>
           </td>
         </tr>
       </tbody>
@@ -52,12 +49,12 @@
   <thead>
     <tr>
       <td>Código</td>
-
+      
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let let empresa of empresas">
-
+      
       <td>
         <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/empresa/editar/{{empresa.id}}"> Editar</button>
         <button class="btn btn-raised btn-danger icon-trash"
