@@ -7,7 +7,7 @@
         (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
-    
+
     <div class="col-6">
         <label >Produto</label>
         <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.produtoId"
@@ -26,11 +26,11 @@
 
     <div class="col-6">
         <label for="campo-quantidade" >Quantidade</label>
-        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade" placeholder="Selecione">
+        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade" required>
     </div>
-      
+
 </div>
-    
+
 
 
 

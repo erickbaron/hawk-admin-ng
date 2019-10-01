@@ -6,7 +6,7 @@ import { EmpresaService } from 'app/services/empresa.service';
 import { Empresa } from 'app/models/empresa';
 import { Produto } from 'app/models/produto';
 import { ProdutoService } from 'app/services/produto.service';
-
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-estoque-cadastro',
@@ -32,8 +32,12 @@ export class EstoqueCadastroComponent implements OnInit {
     private produtoService:ProdutoService) { }
 
   ngOnInit() {
-    this.returnUrl = "/estoque"
+    
+
+
+    
   }
+
 
   obterTodosEmpresa() {
     this.empresaService.obterTodos().subscribe(x => {
