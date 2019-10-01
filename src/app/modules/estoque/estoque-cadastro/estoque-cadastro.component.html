@@ -11,7 +11,7 @@
     <div class="col-6">
         <label >Produto</label>
         <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="IdProduto"
-          (open)="obterTodosProduto()" (change)="selecionadoProduto($event)">
+          (open)="obterTodosProduto()" (change)="selecionadoProduto($event)" aria-required="Produto">
         </ng-select>
     </div>
 
@@ -26,7 +26,7 @@
 
     <div class="col-6">
         <label for="campo-quantidade" >Quantidade</label>
-        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade">
+        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade" required>
     </div>
       
 </div>
