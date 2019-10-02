@@ -18,7 +18,7 @@ export class ProdutoCadastroComponent implements OnInit {
   returnUrl: string;
 
   produto: Produto = new Produto();
-  imgProduto: ImagemProduto = new ImagemProduto();
+  // imgProduto: ImagemProduto = new ImagemProduto();
   empresas: Empresa[] = [];
   empresaId: string = '';
 
@@ -26,7 +26,7 @@ export class ProdutoCadastroComponent implements OnInit {
   categoriaId: string = '';
 
   constructor(
-    private imgService: ImagemProdutoService,
+    // private imgService: ImagemProdutoService,
     private service: ProdutoService,
     private route: ActivatedRoute,
     private router: Router,
