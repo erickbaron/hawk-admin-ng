@@ -74,13 +74,13 @@
                             <p class="d-none">User Settings</p>
                         </a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic3" class="text-left">                           
-                            <a class="dropdown-item py-1" href="/empresa">
+                            <a class="dropdown-item py-1" href="/empresa/login" (click)="login()">
                                 <i class="ft-edit mr-2"></i>
-                                <span >My Profile</span>
+                                <span>Login</span>
 
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:;">
+                            <a class="dropdown-item" href="javascript:;" (click)="logout()">
                                 <i class="ft-power mr-2"></i>
                                 <span>Logout</span>
                             </a>
