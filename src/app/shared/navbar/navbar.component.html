@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
                 <ul class="navbar-nav">
                     <li class="nav-item mr-2  d-none d-lg-block">
-                        <a href="javascript:;" class="nav-link" id="navbar-fullscreen" appToggleFullscreen (click)="ToggleClass()">                            
+                        <a routerLink="javascript:;" class="nav-link" id="navbar-fullscreen" appToggleFullscreen (click)="ToggleClass()">                            
                             <i class="{{toggleClass}} font-medium-3 blue-grey darken-4"></i>
                             <p class="d-none">fullscreen</p>
                         </a>
@@ -79,21 +79,21 @@
                             <p class="d-none">User Settings</p>
                         </a>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic3" class="text-left">                           
-                            <a class="dropdown-item py-1" href="/empresa">
+                            <a class="dropdown-item py-1" routerLink="/empresa">
                                 <i class="ft-edit mr-2"></i>
                                 <span >My Profile</span>
 
                             </a>
-                            <a class="dropdown-item py-1" href="javascript:;">
+                            <a class="dropdown-item py-1" routerLink="javascript:;">
                                 <i class="ft-mail mr-2"></i>
                                 <span>My Inbox</span>
                             </a>
-                            <a class="dropdown-item py-1" href="javascript:;">
+                            <a class="dropdown-item py-1" hrrouterLinkf="javascript:;">
                                 <i class="ft-settings mr-2"></i>
                                 <span>Settings</span>
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:;">
+                            <a class="dropdown-item" routerLink="javascript:;">
                                 <i class="ft-power mr-2"></i>
                                 <span>Logout</span>
                             </a>

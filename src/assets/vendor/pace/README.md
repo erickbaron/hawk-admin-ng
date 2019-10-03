@@ -1,7 +1,7 @@
 pace
 ====
 
-<a href="https://eager.io/app/kYKTiQjoVjQk/install?source=button">
+<a routerLink="https://eager.io/app/kYKTiQjoVjQk/install?source=button">
   <img src="https://install.eager.io/install-button.png" border="0" width="126">
 </a>
 
@@ -22,6 +22,6 @@ If you use AMD or Browserify, require pace.js and call `pace.start()` as early i
 ```html
 <head>
   <script src="/pace/pace.js"></script>
-  <link href="/pace/themes/pace-theme-barber-shop.css" rel="stylesheet" />
+  <link hrouterLinkref="/pace/themes/pace-theme-barber-shop.css" rel="stylesheet" />
 </head>
 ```
