@@ -6,6 +6,8 @@ import { CategoriaService } from 'app/services/categoria.service';
 import { Categoria } from 'app/models/categoria';
 import { EmpresaService } from 'app/services/empresa.service';
 import { Empresa } from 'app/models/empresa';
+import { ImagemProduto } from 'app/models/imagemProduto';
+import { ImagemProdutoService } from 'app/services/imagemProduto';
 
 @Component({
   selector: 'app-produto-cadastro',
@@ -16,14 +18,15 @@ export class ProdutoCadastroComponent implements OnInit {
   returnUrl: string;
 
   produto: Produto = new Produto();
-
+  // imgProduto: ImagemProduto = new ImagemProduto();
   empresas: Empresa[] = [];
-  idEmpresa: string = '';
+  empresaId: string = '';
 
   categorias: Categoria[] = [];
-  idCategoria: string = '';
+  categoriaId: string = '';
 
   constructor(
+    // private imgService: ImagemProdutoService,
     private service: ProdutoService,
     private route: ActivatedRoute,
     private router: Router,
@@ -40,7 +43,7 @@ export class ProdutoCadastroComponent implements OnInit {
     })
   }
   selecionadoCategoria(event) {
-    this.idCategoria = event == undefined ? 0 : event.id;
+    this.categoriaId = event == undefined ? 0 : event.id;
   }
 
 
@@ -51,7 +54,7 @@ export class ProdutoCadastroComponent implements OnInit {
 
   }
   selecionadoEmpresa(event) {
-    this.idEmpresa = event == undefined ? 0 : event.id;
+    this.empresaId = event == undefined ? 0 : event.id;
   }
 
 
@@ -67,6 +70,7 @@ export class ProdutoCadastroComponent implements OnInit {
       })
   }
 
+  
   cancelar() {
     this.router.navigateByUrl(this.returnUrl)
   }

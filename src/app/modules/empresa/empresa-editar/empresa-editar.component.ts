@@ -19,8 +19,8 @@ export class EmpresaEditarComponent implements OnInit {
     private service: EmpresaService,
     private route: ActivatedRoute,
     private router: Router) { }
+  empresas: Empresa[] = [];
 
-    empresas: Empresa[] = [];
   ngOnInit() {
     this.returnUrl = '/empresa'
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -34,24 +34,25 @@ export class EmpresaEditarComponent implements OnInit {
   }
 
 
-  atualizarDados(){
+  atualizarDados() {
     this.service.obterTodos().subscribe(x => {
       this.empresas = x;
-    }, error => { 
+    }, error => {
       alert("ERROR");
     });
   }
 
   alterar(empresa) {
-    this.router.navigateByUrl(this.returnUrl)
-    this.atualizarDados()
-    this.service.alterar(empresa).subscribe( x => {
+    this.service.alterar(empresa).subscribe(x => {
+      this.router.navigateByUrl(this.returnUrl)
+      this.atualizarDados()
       alert("Registro Alterado com Sucesso")
     },
-    error => {
-      alert("Não foi possível alterar")
-    })
+      error => {
+        alert("Não foi possível alterar")
+      })
   }
+
 
   cancelar() {
     this.router.navigateByUrl(this.returnUrl)

@@ -14,6 +14,7 @@
       <td>Altura</td>
       <td>Largura</td>
       <td>Comprimento</td>
+      <td>Categoria</td>
       <td>Ação</td>
     </tr>
   </thead>
@@ -21,7 +22,9 @@
     <tr *ngFor="let produto of produtos">
       <td>{{produto.id}}</td>
       <td>
-        {{produto.imagemURL}}
+        <img src="https://localhost:44330/StaticFiles/{{produto.nomeArquivo}}"
+        [style.width.px]="imagemLargura"
+        [style.margin.px]="imagemMargem">
       </td>
       <td>{{produto.nome}}</td>
       <td>{{produto.categoriaId}}</td>
@@ -32,6 +35,7 @@
       <td>{{produto.altura}}</td>
       <td>{{produto.largura}}</td>
       <td>{{produto.comprimento}}</td>
+      <td>{{produto.categoriaId}}</td>
       <td>
         <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/produto/editar/{{produto.id}}"> Editar</button>
         <button class="btn btn-raised btn-danger icon-trash"

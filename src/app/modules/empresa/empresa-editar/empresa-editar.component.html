@@ -1,36 +1,84 @@
-<h3 class="text-center">Editar Empresa</h3>
-<div class="form-group">
-  <label for="campo-nome">Nome</label>
-  <input type="text" class="form-control" [(ngModel)]="empresa.nome">
+<div class="form-group margin-dark">
+  <h3 class="text-center">Editar Empresa</h3>
+  <div>
+    <label for="campo-nome">Nome <small class="danger">*</small></label>
+    <input type="text" class="form-control" [(ngModel)]="empresa.nome">
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <label for="campo-cnpj">CNPJ <small class="danger">*</small></label>
+      <input type="text" class="form-control" [(ngModel)]="empresa.cnpj">
+    </div>
+
+    <div class="col-3">
+      <div class="form-group">
+        <label for="campo-contato">Contato <small class="danger">*</small></label>
+        <input type="text" class="form-control" [(ngModel)]="empresa.telefone">
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="form-group">
+        <label for="campo-ramo">Ramo <small class="danger">*</small></label>
+        <input type="text" class="form-control" [(ngModel)]="empresa.ramo">
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="form-group">
+        <label for="campo-ramo">id usuario <small class="danger">*</small></label>
+        <input type="number" class="form-control" [(ngModel)]="empresa.usuarioId">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group margin-dark">
+  <h3 class="text-center">Editar Endereco</h3>
+
+  <div class="row">
+    <div class="col-4">
+      <label for="campo-nome">CEP <small class="danger">*</small></label>
+      <input type="text" class="form-control" [(ngModel)]="empresa.cep">
+    </div>
+
+    <div class="col-3">
+      <label for="campo-cnpj">Estado <small class="danger">*</small></label>
+      <input type="text" class="form-control" [(ngModel)]="empresa.estado">
+    </div>
+
+    <div class="col-3">
+      <div class="form-group">
+        <label for="campo-contato">Cidade <small class="danger">*</small></label>
+        <input type="text" class="form-control" [(ngModel)]="empresa.cidade">
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="form-group">
+        <label for="campo-ramo">Número <small class="danger">*</small></label>
+        <input type="text" class="form-control" [(ngModel)]="empresa.numero">
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label for="campo-ramo">Logradouro <small class="danger">*</small></label>
+        <input type="text" class="form-control" [(ngModel)]="empresa.logradouro">
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-group">
+        <label for="campo-ramo">Complemento <small class="danger">*</small></label>
+        <textarea type="text" class="form-control" [(ngModel)]="empresa.complemento"></textarea>
+      </div>
+    </div>
+
+
+  </div>
 </div>
 
-<div class="row">
-  <div class="col-4">
-    <label for="campo-cnpj">CNPJ</label>
-    <input type="text" class="form-control" [(ngModel)]="empresa.cnpj">
-  </div>
-
-  <div class="col-3">
-    <div class="form-group">
-      <label for="campo-contato">Contato <small class="danger">*</small></label>
-      <input type="text" class="form-control" [(ngModel)]="empresa.telefone">
-    </div>
-  </div>
-
-  <div class="col-3">
-    <div class="form-group">
-      <label for="campo-ramo">Ramo</label>
-      <input type="text" class="form-control" [(ngModel)]="empresa.ramo">
-    </div>
-  </div>
-
-  <div class="col-2">
-    <div class="form-group">
-      <label for="campo-ramo">id usuario</label>
-      <input type="number" class="form-control" [(ngModel)]="empresa.usuarioId">
-    </div>
-  </div>
+<div class="row pull-right">
+<button class="btn btn-raised btn-danger pull-right icon-close mr-2" (click)="cancelar()"> Cancelar</button>
+<button class="btn btn-raised btn-success pull-right ft-save" (click)="alterar(empresa)"> Salvar</button>
 </div>
-
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-<button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="alterar()">Salvar</button>

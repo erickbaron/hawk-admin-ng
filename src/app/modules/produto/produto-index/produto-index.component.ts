@@ -13,19 +13,22 @@ export class ProdutoIndexComponent implements OnInit {
 
   produtos: Produto[] = [];
 
+  imagemLargura = 50;
+  imagemMargem = 2;
+
   ngOnInit() {
     this.atualizarDados();
   }
 
-  atualizarDados(){
+  atualizarDados() {
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
-    }, error => { 
+    }, error => {
       alert("ERROR");
     });
   }
 
-  apagar(id: number){
+  apagar(id: number) {
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
     }, error => {

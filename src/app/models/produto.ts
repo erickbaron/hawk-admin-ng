@@ -14,8 +14,10 @@ export class Produto {
     largura: number;
     comprimento: number;
     registroAtivo: boolean;
-    imagemURL: string; 
+    promocao: boolean;
+    nomeArquivo: string; 
+    nomeHash: string;
     empresaId: Empresa;
     categoriaId: Categoria;
-    avaliacaoProduto: AvaliacaoProduto;
+    
 }
