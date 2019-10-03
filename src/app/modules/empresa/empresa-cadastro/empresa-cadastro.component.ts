@@ -14,6 +14,9 @@ export class EmpresaCadastroComponent implements OnInit {
 
   empresa: Empresa = new Empresa();
 
+  public maskTelefone = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  public maskCNPJ = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/];
+
   constructor(
     private service: EmpresaService,
     private route: ActivatedRoute,
@@ -27,11 +30,11 @@ export class EmpresaCadastroComponent implements OnInit {
     this.service.adicionar(this.empresa).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
       // sucesso
-      alert("Cadastrou")
+      alert('Cadastrou')
     },
       error => {
         // erro
-        alert("Não foi possível cadastrar")
+        alert('Não foi possível cadastrar')
       })
   }
 

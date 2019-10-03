@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Usuario } from '../models/usuario';
+import { Observable } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from 'environments/environment';
+import { UsuarioResponse } from 'app/models/usuario-response';
+
+const url = environment.url + '/usuarios';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  jwthelper = new JwtHelperService();
+
+  constructor(
+    private http: HttpClient
+    ) { }
+    login(usuario: Usuario): Observable<UsuarioResponse> {
+      return this.http.post<UsuarioResponse>(url + '/login', usuario);
+    }
+
+    logout() {
+      return this.http.get<UsuarioResponse>(url + '/logout');
+    }
+
+    getId() {
+      return localStorage.getItem('UsuarioId');
+    }
+
+    getToken(): string {
+      return localStorage.getItem('UsuarioToken');
+    }
+  }

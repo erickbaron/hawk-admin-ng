@@ -7,7 +7,7 @@
         (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
-    
+
     <div class="col-6">
         <label >Produto</label>
         <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.produtoId"
@@ -26,14 +26,17 @@
 
     <div class="col-6">
         <label for="campo-quantidade" >Quantidade</label>
-        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade" placeholder="Selecione">
+        <input type="number" class="form-control" [(ngModel)]="estoque.quantidade" required>
     </div>
-      
-</div>
-    
-
-
 
 </div>
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-<button class="btn btn-raised btn-success pull-right mr-2" (click)="salvar()">Salvar</button>
+
+
+
+
+</div>
+
+<div class="row pull-right">
+<button class="btn btn-raised btn-danger pull-right icon-close mr-2" (click)="cancelar()"> Cancelar</button>
+<button class="btn btn-raised btn-success pull-right ft-save" (click)="salvar()"> Salvar</button>
+</div>

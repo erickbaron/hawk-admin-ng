@@ -6,6 +6,8 @@ import { CategoriaService } from 'app/services/categoria.service';
 import { Categoria } from 'app/models/categoria';
 import { EmpresaService } from 'app/services/empresa.service';
 import { Empresa } from 'app/models/empresa';
+import { ImagemProduto } from 'app/models/imagemProduto';
+import { ImagemProdutoService } from 'app/services/imagemProduto';
 
 @Component({
   selector: 'app-produto-cadastro',
@@ -16,7 +18,7 @@ export class ProdutoCadastroComponent implements OnInit {
   returnUrl: string;
 
   produto: Produto = new Produto();
-
+  // imgProduto: ImagemProduto = new ImagemProduto();
   empresas: Empresa[] = [];
   empresaId: string = '';
 
@@ -24,6 +26,7 @@ export class ProdutoCadastroComponent implements OnInit {
   categoriaId: string = '';
 
   constructor(
+    // private imgService: ImagemProdutoService,
     private service: ProdutoService,
     private route: ActivatedRoute,
     private router: Router,

@@ -10,9 +10,8 @@ import { Produto } from 'app/models/produto';
 })
 export class ProdutoEditarComponent implements OnInit {
   returnUrl: string;
-
-  produto: Produto = new Produto;
-
+  produto: Produto = new Produto();
+  produtos: Produto[] = [];
   id: number
 
   constructor(
@@ -20,7 +19,6 @@ export class ProdutoEditarComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) { }
 
-    produtos: Produto[] = [];
 
   ngOnInit() {
     this.returnUrl = '/produto'
@@ -47,10 +45,6 @@ export class ProdutoEditarComponent implements OnInit {
     this.router.navigateByUrl(this.returnUrl)
     this.service.alterar(produto).subscribe( x => {
       this.atualizarDados()
-      alert("Registro Alterado com Sucesso")
-    },
-    error => {
-      alert("Não foi possível alterar")
     })
   }
 

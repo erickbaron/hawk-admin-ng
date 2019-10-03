@@ -72,19 +72,20 @@
       <input type="number" class="form-control" [(ngModel)]="produto.comprimento">
     </div>
   </div>
-  <div class="col-6">
+  <!-- <div class="col-6">
     <div class="form-group ">
       <label for="arquivo">Imagens</label>
       <form method="post" enctype="multipart/form-data" asp-controller="produto" asp-action="Upload">
         <div class="custom-file">
-          <input type="file" id="arquivo" name="arquivo" class="custom-file-input"  [(ngModel)]="produto.nomeArquivo">
+          <input type="file" id="arquivo" name="arquivo" class="custom-file-input"  [(ngModel)]="imagemProduto.arquivo">
           <label for="arquivo" class="custom-file-label">Arquivo</label>
         </div>
       </form>
     </div>
-  </div>
+  </div> -->
 </div>
 
-
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-<button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="salvar()">Salvar</button>
+<div class="row pull-right">
+<button class="btn btn-raised btn-danger pull-right icon-close mr-2" (click)="cancelar()"> Cancelar</button>
+<button class="btn btn-raised btn-success pull-right ft-save" (click)="salvar()"> Salvar</button>
+</div>
