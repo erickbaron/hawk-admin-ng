@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from 'app/services/produto.service';
 import { Produto } from 'app/models/produto';
+import { Categoria } from 'app/models/categoria';
+import { CategoriaService } from 'app/services/categoria.service';
+
 
 @Component({
   selector: 'app-produto-index',
@@ -9,10 +12,16 @@ import { Produto } from 'app/models/produto';
 })
 export class ProdutoIndexComponent implements OnInit {
 
-  constructor(private service: ProdutoService) { }
+  constructor(
+    private service: ProdutoService,
+    private serviceCat: CategoriaService
 
+    ) { }
+
+  produto: Produto = new Produto;
   produtos: Produto[] = [];
-
+  categorias: Categoria[] = [];
+idCat: number;
   imagemLargura = 50;
   imagemMargem = 2;
 
@@ -21,6 +30,7 @@ export class ProdutoIndexComponent implements OnInit {
   }
 
   atualizarDados() {
+    this.obterCategorias();
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
     }, error => {
@@ -33,6 +43,12 @@ export class ProdutoIndexComponent implements OnInit {
       this.atualizarDados();
     }, error => {
       alert("ERRO");
+    })
+  }
+
+  obterCategorias() {
+    this.serviceCat.obterTodos().subscribe(x => {
+      this.categorias = x;
     })
   }
 

@@ -1,4 +1,5 @@
 import { Component, ViewContainerRef, OnInit, OnDestroy } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -11,7 +12,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
     subscription: Subscription;
 
-    constructor(private router: Router) {
+    constructor(
+        private router: Router,
+        private toastr: ToastrService,
+        ) {
     }
 
     ngOnInit() {

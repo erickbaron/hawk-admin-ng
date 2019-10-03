@@ -11,13 +11,13 @@
     <div class="row">
       <div class="col-3">
         <label for="campo-cnpj">CNPJ<small class="text-danger"> *</small></label>
-        <input type="text" id="campo-cnpj" placeholder="Informe o CNPJ da empresa" class="form-control" required [(ngModel)]="empresa.cnpj" name="cnpj" [textMask]="{mask: maskCNPJ}">
+        <input type="text" id="campo-cnpj" placeholder="Informe o CNPJ da empresa" class="form-control" required [(ngModel)]="empresa.cnpj" name="cnpj"
       </div>
 
       <div class="col-4">
         <div class="form-group">
           <label for="campo-contato">Contato <small class="danger">*</small></label>
-          <input type="text" id="campo-contato" placeholder="Informe o telefone de contato da empresa" class="form-control" [(ngModel)]="empresa.telefone" name="contato" [textMask]="{mask: maskTelefone}" required>
+          <input type="text" id="campo-contato" placeholder="Informe o telefone de contato da empresa" class="form-control" [(ngModel)]="empresa.telefone" name="contato" required>
         </div>
       </div>
 
