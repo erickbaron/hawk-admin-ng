@@ -30,11 +30,7 @@ export class EstoqueEditarComponent implements OnInit {
   salvar() {
     this.service.adicionar(this.estoque).subscribe(x => {
       // sucesso
-      alert("Cadastrou")
-    }, 
-    error => {
-      // erro
-      alert("Não foi possível cadastrar")
+   
     })
   }
 
@@ -51,17 +47,14 @@ export class EstoqueEditarComponent implements OnInit {
     this.service.obterTodos().subscribe(x => {
       this.estoques = x;
     }, error => { 
-      alert("ERROR");
+      
     });
   }
 
   alterar(estoque) {
     this.service.alterar(estoque).subscribe( x => {
       this.atualizarDados();
-      alert("Registro Alterado com Sucesso")
-    },
-    error => {
-      alert("Não foi possível alterar")
+      
     })
   }
   }

@@ -20,16 +20,13 @@ export class FinancaIndexComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.financas = x;
-    }, error => { 
-      alert("ERROR");
+  
     });
   } 
 
     apagar(id: number){
       this.service.apagar(id).subscribe(x => {
         this.atualizarDados();
-      }, error => {
-        alert("ERRO");
       })
   }
 

@@ -25,12 +25,6 @@ export class FinancaCadastroComponent implements OnInit {
   salvar() {
     this.service.adicionar(this.financa).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
-      // sucesso
-      alert("Cadastrou")
-    }, 
-    error => {
-      // erro
-      alert("Não foi possível cadastrar")
     })
   }
 

@@ -36,8 +36,6 @@ export class FinancaEditarComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.financas = x;
-    }, error => { 
-      alert("ERROR");
     });
   }
 
@@ -45,10 +43,6 @@ export class FinancaEditarComponent implements OnInit {
     this.router.navigateByUrl(this.returnUrl)
     this.atualizarDados();
     this.service.alterar(financa).subscribe( x => {
-      alert("Registro Alterado com Sucesso")
-    },
-    error => {
-      alert("Não foi possível alterar")
     })
   }
 

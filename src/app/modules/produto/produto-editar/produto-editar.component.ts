@@ -36,8 +36,7 @@ export class ProdutoEditarComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
-    }, error => { 
-      alert("ERROR");
+   
     });
   }
 

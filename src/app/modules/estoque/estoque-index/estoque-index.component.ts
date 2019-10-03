@@ -22,7 +22,7 @@ export class EstoqueIndexComponent implements OnInit {
     this.service.obterTodos().subscribe(x => {
       this.estoques = x;
     }, error => { 
-      alert("ERROR");
+      
     });
   }
 
@@ -30,7 +30,7 @@ export class EstoqueIndexComponent implements OnInit {
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
     }, error => {
-      alert("ERROR");
+      
     })
   }
 

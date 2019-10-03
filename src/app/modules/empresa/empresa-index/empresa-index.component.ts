@@ -20,16 +20,14 @@ export class EmpresaIndexComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.empresas = x;
-    }, error => { 
-      alert("ERROR");
+    
     });
   }
 
   apagar(id: number){
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
-    }, error => {
-      alert("ERRO");
+    
     })
   }
 

@@ -61,12 +61,7 @@ export class ProdutoCadastroComponent implements OnInit {
   salvar() {
     this.service.adicionar(this.produto).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
-      // sucesso
-      alert("Cadastrou")
-    },
-      error => {
-        // erro
-        alert("Não foi possível cadastrar")
+  
       })
   }
 

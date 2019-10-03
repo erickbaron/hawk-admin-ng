@@ -25,12 +25,8 @@ export class CategoriaCadastroComponent implements OnInit {
   salvar() {
     this.service.adicionar(this.categoria).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
-      // sucesso
-      alert("Cadastrou")
-    }, 
-    error => {
-      // erro
-      alert("Não foi possível cadastrar")
+     
+     
     })
   }
 
