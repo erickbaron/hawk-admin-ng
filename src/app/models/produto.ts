@@ -19,5 +19,7 @@ export class Produto {
     nomeHash: string;
     empresaId: Empresa;
     categoriaId: Categoria;
+    categoria: Categoria;
+    
     
 }
