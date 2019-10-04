@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Usuario } from 'app/models/usuario';
@@ -15,7 +14,6 @@ export class LoginComponent {
 
     constructor(
         private service: AuthService,
-        private toastr: ToastrService,
         private route: Router,
         private location: Location
     ) { }
@@ -27,7 +25,6 @@ export class LoginComponent {
             localStorage.setItem('UsuarioSenha', x.usuario.senha);
             this.route.navigateByUrl('/home');
         }, error => {
-            this.toastr.error('Login e/ou senha incorretos');
         });
     }
     goBack() {
