@@ -5,6 +5,7 @@ import { CategoriaService } from 'app/services/categoria.service';
 import { EmpresaService } from 'app/services/empresa.service';
 import { Categoria } from 'app/models/categoria';
  
+
 @Component({
   selector: 'app-produto-index',
   templateUrl: './produto-index.component.html',
@@ -38,7 +39,6 @@ export class ProdutoIndexComponent implements OnInit {
 
 
   atualizarDados() {
-    this.obterCategorias();
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
 
@@ -51,12 +51,6 @@ export class ProdutoIndexComponent implements OnInit {
       this.atualizarDados();
     }, error => {
       alert("Erro ao apagar os dados");
-    })
-  }
-
-  obterCategorias() {
-    this.serviceCat.obterTodos().subscribe(x => {
-      this.categorias = x;
     })
   }
 
