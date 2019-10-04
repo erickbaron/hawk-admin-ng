@@ -26,7 +26,7 @@
                 [routerLinkActiveOptions]="{exact: true}">
                 <a appSidebarAnchorToggle [routerLink]="menuItem.class === '' ? [menuItem.path] : null" *ngIf="!menuItem.isExternalLink; else externalLinkBlock">
                     <i [ngClass]="[menuItem.icon]"></i>
-                    <span class="menu-title">{{menuItem.title | translate }}</span>
+                    <span class="">{{menuItem.title | translate }}</span>
                     <span *ngIf="menuItem.badge != '' " [ngClass]="[menuItem.badgeClass]">{{menuItem.badge}}</span>
                 </a>
                 <ng-template #externalLinkBlock>
