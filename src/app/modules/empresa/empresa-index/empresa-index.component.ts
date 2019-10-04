@@ -20,6 +20,7 @@ export class EmpresaIndexComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.empresas = x;
+
     }, error => { 
       alert("Erro ao atualizar a página");
     });

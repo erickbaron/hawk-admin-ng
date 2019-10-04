@@ -10,15 +10,16 @@ import { Empresa } from 'app/models/empresa';
 })
 export class EmpresaEditarComponent implements OnInit {
   returnUrl: string;
-
+  
   empresa: Empresa = new Empresa;
-
+  
   id: number
-
+  
   constructor(
     private service: EmpresaService,
     private route: ActivatedRoute,
     private router: Router) { }
+
   empresas: Empresa[] = [];
 
   ngOnInit() {
@@ -50,11 +51,12 @@ export class EmpresaEditarComponent implements OnInit {
       error => {
         alert("Não foi possível alterar")
       })
+    }
+
+    
+    cancelar() {
+      this.router.navigateByUrl(this.returnUrl)
+    }
+    
   }
-
-
-  cancelar() {
-    this.router.navigateByUrl(this.returnUrl)
-  }
-
-}
+  

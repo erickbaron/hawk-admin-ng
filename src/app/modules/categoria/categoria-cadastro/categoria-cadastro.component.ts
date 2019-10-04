@@ -25,6 +25,7 @@ categorias: Categoria[] = [];
   salvar() {
     this.service.adicionar(this.categoria).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
+
     }, 
     error => {
       // erro

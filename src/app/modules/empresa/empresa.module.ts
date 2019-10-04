@@ -7,13 +7,15 @@ import { EmpresaCadastroComponent } from './empresa-cadastro/empresa-cadastro.co
 import { FormsModule } from '@angular/forms';
 import { EmpresaEditarComponent } from './empresa-editar/empresa-editar.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [EmpresaIndexComponent, EmpresaCadastroComponent, EmpresaEditarComponent],
+  declarations: [EmpresaIndexComponent, EmpresaCadastroComponent, EmpresaEditarComponent, LoginComponent],
   imports: [
     CommonModule,
     FormsModule,
     NgSelectModule,
+    
     EmpresaRoutingModule
   ]
 })

@@ -8,16 +8,16 @@
 <div class="row">
   <div class="col-6">
     <label for="campo-categoria">Categoria</label>
-    <ng-select [items]="categorias" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="produto.categoriaId"
-      (open)="obterTodosCategoria()" (change)="selecionadoCategoria($event)">
+    <ng-select [items]="categorias" bindLabel="nome" bindValue="id" placeholder="Selecione"
+      [(ngModel)]="produto.categoriaId" (open)="obterTodosCategoria()" (change)="selecionadoCategoria($event)">
     </ng-select>
   </div>
   <div class="col-6">
     <div class="form-group">
 
       <label for="campo-empresa">Empresa</label>
-      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="produto.empresaId"
-        (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione"
+        [(ngModel)]="produto.empresaId" (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
   </div>
@@ -72,17 +72,22 @@
       <input type="number" class="form-control" [(ngModel)]="produto.comprimento">
     </div>
   </div>
-  <div class="col-6">
+  <!-- <div class="col-6">
     <div class="form-group ">
       <label for="arquivo">Imagens</label>
-        <div>
-          <input type="file" id="arquivo" name="arquivo" 
-           (change)="onFileChange($event)" [(ngModel)]="produto.nomeArquivo">
-        </div>
-    </div>
+      <form method="post" enctype="multipart/form-data" asp-controller="produto" asp-action="Upload">
+        <div class="custom-file">
+          <input type="file" id="arquivo" name="arquivo" class="custom-file-input"  [(ngModel)]="imagemProduto.arquivo">
+          <label for="arquivo" class="custom-file-label">Arquivo</label>
+        -->
+  <div>
+    <input type="file" id="arquivo" name="arquivo" (change)="onFileChange($event)" [(ngModel)]="produto.nomeArquivo">
   </div>
+  <!--</div>
+  </div> -->
 </div>
 
-
-<button class="btn btn-raised btn-danger pull-right " (click)="cancelar()"><span class="icon-close"> </span> Cancelar</button>
-<button class="btn btn-raised btn-success pull-right  mr-2" (click)="salvar()"><span class="ft-save"> </span> Salvar</button>
+<div class="row pull-right">
+  <button class="btn btn-raised btn-danger pull-right icon-close mr-2" (click)="cancelar()"> Cancelar</button>
+  <button class="btn btn-raised btn-success pull-right ft-save" (click)="salvar()"> Salvar</button>
+</div>

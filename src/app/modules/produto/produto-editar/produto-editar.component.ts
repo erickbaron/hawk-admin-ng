@@ -10,6 +10,7 @@ import { Produto } from 'app/models/produto';
 })
 export class ProdutoEditarComponent implements OnInit {
   returnUrl: string;
+  produtos: Produto[] = [];
 
   produto: Produto = new Produto;
   fileNameToUpdate: string;
@@ -22,7 +23,6 @@ export class ProdutoEditarComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) { }
 
-    produtos: Produto[] = [];
 
   ngOnInit() {
     this.returnUrl = '/produto'
@@ -40,6 +40,7 @@ export class ProdutoEditarComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
+
     }, error => { 
       alert("Erro ao atualizar a página");
     });
@@ -70,6 +71,7 @@ editarUpload(){
     this.atualizarDados();
 
     this.service.alterar(produto).subscribe( x => {
+
       this.atualizarDados();
     },
     error => {

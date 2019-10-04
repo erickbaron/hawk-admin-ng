@@ -36,6 +36,7 @@ export class CategoriaEditarComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.categorias = x;
+
     }, error => { 
       alert("Erro ao atualizar a página");
     });
@@ -45,6 +46,7 @@ export class CategoriaEditarComponent implements OnInit {
     this.router.navigateByUrl(this.returnUrl)
     this.service.alterar(categoria).subscribe( x => {
       this.atualizarDados();
+
     },
     error => {
       alert("Não foi possível alterar")

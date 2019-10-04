@@ -7,12 +7,12 @@
             </div>
             <span class="text align-middle">HAWK</span>
         </a>
-        <a class="nav-toggle d-none d-sm-none d-md-none d-lg-block" id="sidebarToggle" href="javascript:;">
+        <!-- <a class="nav-toggle d-none d-sm-none d-md-none d-lg-block" id="sidebarToggle" href="javascript:;">
             <i #toggleIcon appSidebarToggle class="ft-toggle-right toggle-icon" data-toggle="expanded"></i>
         </a>
-        <a class="nav-close d-block d-md-block d-lg-none d-xl-none" id="sidebarClose" href="javascript:;">
+        <a class="nav-close d-block d-md-block d-lg-none d-xl-none" id="sidebarClose" routerLink="javascript:;">
             <i class="ft-x"></i>
-        </a>
+        </a> -->
     </div>
 </div>
 <!-- Sidebar Header Ends -->
@@ -30,7 +30,7 @@
                     <span *ngIf="menuItem.badge != '' " [ngClass]="[menuItem.badgeClass]">{{menuItem.badge}}</span>
                 </a>
                 <ng-template #externalLinkBlock>
-                    <a [href]="[menuItem.path]" target="_blank">
+                    <a [routerLink]="[menuItem.path]" target="_blank">
                         <i [ngClass]="[menuItem.icon]"></i>
                         <span class="menu-title">{{menuItem.title | translate }}</span>
                         <span *ngIf="menuItem.badge != '' " [ngClass]="[menuItem.badgeClass]">{{menuItem.badge}}</span>
@@ -45,7 +45,7 @@
                             <span *ngIf="menuSubItem.badge != '' " [ngClass]="[menuSubItem.badgeClass]">{{menuSubItem.badge}}</span>
                         </a>
                         <ng-template #externalSubLinkBlock>
-                            <a [href]="[menuSubItem.path]">
+                            <a [routerLink]="[menuSubItem.path]">
                                 <i [ngClass]="[menuSubItem.icon]"></i>
                                 <span class="menu-title">{{menuSubItem.title | translate }}</span>
                                 <span *ngIf="menuSubItem.badge != '' " [ngClass]="[menuSubItem.badgeClass]">{{menuSubItem.badge}}</span>
@@ -61,7 +61,7 @@
                                     <span *ngIf="menuSubsubItem.badge != '' " [ngClass]="[menuSubsubItem.badgeClass]">{{menuSubsubItem.badge}}</span>
                                 </a>
                                 <ng-template #externalSubSubLinkBlock>
-                                    <a [href]="[menuSubsubItem.path]">
+                                    <a [routerLink]="[menuSubsubItem.path]">
                                         <i [ngClass]="[menuSubsubItem.icon]"></i>
                                         <span class="menu-title">{{menuSubsubItem.title | translate }}</span>
                                         <span *ngIf="menuSubsubItem.badge != '' " [ngClass]="[menuSubsubItem.badgeClass]">{{menuSubsubItem.badge}}</span>

@@ -14,6 +14,9 @@ export class EmpresaCadastroComponent implements OnInit {
 
   empresa: Empresa = new Empresa();
 
+  public maskTelefone = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  public maskCNPJ = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/];
+
   constructor(
     private service: EmpresaService,
     private route: ActivatedRoute,

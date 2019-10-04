@@ -18,6 +18,7 @@ export class ProdutoCadastroComponent implements OnInit {
   returnUrl: string;
 
   produto: Produto = new Produto();
+
   produtos: Produto[] = [];
   empresas: Empresa[] = [];
   empresaId: string = '';
@@ -31,7 +32,7 @@ export class ProdutoCadastroComponent implements OnInit {
   categoriaId: string = '';
 
   constructor(
-    private imgService: ImagemProdutoService,
+    // private imgService: ImagemProdutoService,
     private service: ProdutoService,
     private route: ActivatedRoute,
     private router: Router,
@@ -84,11 +85,10 @@ export class ProdutoCadastroComponent implements OnInit {
         }
       );
   }
-  
+
   salvar() {
     this.uploadImagem();
     this.service.adicionar(this.produto).subscribe(x => {
-
       this.router.navigateByUrl(this.returnUrl)
       this.atualizarDados();
       // sucesso

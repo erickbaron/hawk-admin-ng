@@ -20,6 +20,7 @@ export class CategoriaIndexComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.categorias = x;
+
     }, error => { 
       alert("Erro ao atualizar a página");
     });
@@ -28,6 +29,7 @@ export class CategoriaIndexComponent implements OnInit {
   apagar(id: number){
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
+
     }, error => {
       alert("Erro ao apagar os dados");
     })

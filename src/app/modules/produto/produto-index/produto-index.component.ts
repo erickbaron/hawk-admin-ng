@@ -41,6 +41,7 @@ export class ProdutoIndexComponent implements OnInit {
   atualizarDados() {
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
+
     }, error => {
       alert('Erro ao carregar a página')});
   }
