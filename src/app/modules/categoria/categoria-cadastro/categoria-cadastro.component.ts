@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'app/models/categoria';
 import { CategoriaService } from 'app/services/categoria.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-categoria-cadastro',
@@ -17,9 +16,7 @@ categorias: Categoria[] = [];
   constructor(
     private service: CategoriaService, 
     private route: ActivatedRoute, 
-    private router: Router,
-    private toastr: ToastrService,
-    ) { }
+    private router: Router) { }
 
   ngOnInit() {
     this.returnUrl = '/categoria'
@@ -28,8 +25,6 @@ categorias: Categoria[] = [];
   salvar() {
     this.service.adicionar(this.categoria).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
-      // sucesso
-      this.toastr.success("Cadastrou")
   
     })
   }

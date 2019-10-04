@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from 'app/services/produto.service';
 import { Produto } from 'app/models/produto';
+import { CategoriaService } from 'app/services/categoria.service';
+import { EmpresaService } from 'app/services/empresa.service';
+import { Categoria } from 'app/models/categoria';
+ 
 
 @Component({
   selector: 'app-produto-index',
@@ -17,7 +21,7 @@ export class ProdutoIndexComponent implements OnInit {
     this.atualizarDados();
   }
 
-  atualizarDados(){
+  atualizarDados() {
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
     
@@ -27,7 +31,7 @@ export class ProdutoIndexComponent implements OnInit {
   apagar(id: number){
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
-  
+    
     })
   }
 
