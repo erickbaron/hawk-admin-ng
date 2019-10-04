@@ -13,7 +13,7 @@ export class CategoriaCadastroComponent implements OnInit {
   returnUrl: string;
 
   categoria: Categoria = new Categoria();
-
+categorias: Categoria[] = [];
   constructor(
     private service: CategoriaService, 
     private route: ActivatedRoute, 
@@ -35,6 +35,13 @@ export class CategoriaCadastroComponent implements OnInit {
       // erro
       alert("Não foi possível cadastrar")
     })
+  }
+
+  atualizarDados() {
+    this.service.obterTodos().subscribe(x => {
+      this.categorias = x;
+    }, error => {
+      alert('Erro ao carregar a página')});
   }
 
     cancelar() {

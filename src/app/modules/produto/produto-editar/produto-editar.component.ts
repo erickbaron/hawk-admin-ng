@@ -10,8 +10,11 @@ import { Produto } from 'app/models/produto';
 })
 export class ProdutoEditarComponent implements OnInit {
   returnUrl: string;
+  produtos: Produto[] = [];
 
   produto: Produto = new Produto;
+  fileNameToUpdate: string;
+  file: File;
 
   id: number
 
@@ -20,7 +23,6 @@ export class ProdutoEditarComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) { }
 
-    produtos: Produto[] = [];
 
   ngOnInit() {
     this.returnUrl = '/produto'
@@ -38,16 +40,39 @@ export class ProdutoEditarComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
+
     }, error => { 
-      alert("ERROR");
+      alert("Erro ao atualizar a página");
     });
   }
 
+  onFileChange(event) {
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      this.file = event.target.files;
+      console.log(this.file);
+    }
+  }
+
+editarUpload(){
+  this.produto.nomeArquivo = this.fileNameToUpdate;
+  this.service.postUpload(this.file, this.fileNameToUpdate)
+  .subscribe(
+    () => {
+      this.atualizarDados();
+    }
+  );
+}
+
+
   alterar(produto) {
     this.router.navigateByUrl(this.returnUrl)
+    this.atualizarDados();
+
     this.service.alterar(produto).subscribe( x => {
-      this.atualizarDados()
-      alert("Registro Alterado com Sucesso")
+
+      this.atualizarDados();
     },
     error => {
       alert("Não foi possível alterar")

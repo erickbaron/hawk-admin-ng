@@ -1,48 +1,56 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from 'app/services/produto.service';
 import { Produto } from 'app/models/produto';
-import { Categoria } from 'app/models/categoria';
 import { CategoriaService } from 'app/services/categoria.service';
-
-
+import { EmpresaService } from 'app/services/empresa.service';
+import { Categoria } from 'app/models/categoria';
+ 
 @Component({
   selector: 'app-produto-index',
   templateUrl: './produto-index.component.html',
   styles: []
 })
 export class ProdutoIndexComponent implements OnInit {
-
-  constructor(
-    private service: ProdutoService,
-    private serviceCat: CategoriaService
-
-    ) { }
-
-  produto: Produto = new Produto;
+  
   produtos: Produto[] = [];
-  categorias: Categoria[] = [];
-idCat: number;
+  produto: Produto = new Produto();
+  categoria: Categoria = new Categoria();
+
+  categoriaNome: string = "";
   imagemLargura = 50;
   imagemMargem = 2;
 
-  ngOnInit() {
-    this.atualizarDados();
-  }
+  constructor(
+    private service: ProdutoService,
+    private serviceCategoria: CategoriaService,
+    private serviceEmpresa: EmpresaService,
+ 
+    ) { }
+
+    ngOnInit() {
+      this.atualizarDados();
+    }
+
+    obterCategoriaPeloId(){
+      this.serviceCategoria.obterPeloId(this.produto.id)
+      this.categoriaNome = this.categoria.nome
+    }
+
 
   atualizarDados() {
     this.obterCategorias();
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
+
     }, error => {
-      alert("ERROR");
-    });
+      alert('Erro ao carregar a página')});
   }
 
   apagar(id: number) {
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
     }, error => {
-      alert("ERRO");
+      alert("Erro ao apagar os dados");
     })
   }
 

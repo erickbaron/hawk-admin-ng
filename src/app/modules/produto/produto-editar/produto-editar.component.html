@@ -53,7 +53,16 @@
         </div>
   </div>
 </div>
-<div class="row pull-right">
-<button class="btn btn-raised btn-danger pull-right icon-close  mr-2" (click)="cancelar()"> Cancelar</button>
-  <button class="btn btn-raised btn-success pull-right ft-save" (click)="alterar(produto)"> Salvar</button>
+
+<div class="col-6">
+  <div class="form-group ">
+    <label for="arquivo">Imagens</label>
+      <div>
+        <input type="file" id="arquivo" name="arquivo" 
+         (change)="onFileChange($event)" [(ngModel)]="produto.nomeArquivo">
+      </div>
+  </div>
 </div>
+
+<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
+  <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="alterar(produto)">Salvar</button>

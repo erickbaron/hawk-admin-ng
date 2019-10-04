@@ -29,6 +29,14 @@ export class ProdutoService {
     return this.http.post(url + "/add", produto);
   }
 
+  postUpload(file: File, name: string) {
+    const fileToUplaod = <File>file[0];
+    const formData = new FormData();
+    formData.append('file', fileToUplaod, name);
+
+    return this.http.post(url + '/upload', formData);
+  }
+
   apagar(id: number): Observable<any> {
     return this.http.delete(url + "/delete?id=" + id);
   }

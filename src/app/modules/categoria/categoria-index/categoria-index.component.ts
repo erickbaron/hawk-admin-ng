@@ -20,16 +20,18 @@ export class CategoriaIndexComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.categorias = x;
+
     }, error => { 
-      alert("ERROR");
+      alert("Erro ao atualizar a página");
     });
   }
 
   apagar(id: number){
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
+
     }, error => {
-      alert("ERRO");
+      alert("Erro ao apagar os dados");
     })
   }
 
