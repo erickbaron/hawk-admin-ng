@@ -75,12 +75,10 @@
   <div class="col-6">
     <div class="form-group ">
       <label for="arquivo">Imagens</label>
-      <form method="post" enctype="multipart/form-data" asp-controller="produto" asp-action="Upload">
-        <div class="custom-file">
-          <input type="file" id="arquivo" name="arquivo" class="custom-file-input"  [(ngModel)]="imagemProduto.nomeArquivo">
-          <label for="arquivo" class="custom-file-label">Arquivo</label>
+        <div>
+          <input type="file" id="arquivo" name="arquivo" 
+           (change)="onFileChange($event)" [(ngModel)]="produto.nomeArquivo">
         </div>
-      </form>
     </div>
   </div>
 </div>

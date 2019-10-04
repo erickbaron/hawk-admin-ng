@@ -21,7 +21,7 @@ export class EmpresaIndexComponent implements OnInit {
     this.service.obterTodos().subscribe(x => {
       this.empresas = x;
     }, error => { 
-      alert("ERROR");
+      alert("Erro ao atualizar a página");
     });
   }
 
@@ -29,7 +29,7 @@ export class EmpresaIndexComponent implements OnInit {
     this.service.apagar(id).subscribe(x => {
       this.atualizarDados();
     }, error => {
-      alert("ERRO");
+      alert("Erro ao apagar os dados");
     })
   }
 

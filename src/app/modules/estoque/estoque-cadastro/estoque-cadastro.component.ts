@@ -57,7 +57,6 @@ export class EstoqueCadastroComponent implements OnInit {
   salvar() {
     this.service.adicionar(this.estoque).subscribe(x => {
       // sucesso
-      alert("Cadastrou")
     },
       error => {
         // erro

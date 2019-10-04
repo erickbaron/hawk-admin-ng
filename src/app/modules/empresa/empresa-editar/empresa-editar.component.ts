@@ -38,7 +38,7 @@ export class EmpresaEditarComponent implements OnInit {
     this.service.obterTodos().subscribe(x => {
       this.empresas = x;
     }, error => {
-      alert("ERROR");
+      alert("Erro ao atualizar a página");
     });
   }
 
@@ -46,7 +46,6 @@ export class EmpresaEditarComponent implements OnInit {
     this.service.alterar(empresa).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
       this.atualizarDados()
-      alert("Registro Alterado com Sucesso")
     },
       error => {
         alert("Não foi possível alterar")
