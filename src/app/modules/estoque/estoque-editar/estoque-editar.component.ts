@@ -49,9 +49,7 @@ export class EstoqueEditarComponent implements OnInit {
   atualizarDados(){
     this.service.obterTodos().subscribe(x => {
       this.estoques = x;
-    }, error => { 
-
-      alert("Erro ao atualizar a página");
+    
     });
   }
 
@@ -59,9 +57,6 @@ export class EstoqueEditarComponent implements OnInit {
     this.service.alterar(estoque).subscribe( x => {
       this.atualizarDados();
 
-    },
-    error => {
-      alert("Não foi possível alterar")
     })
   }
   }

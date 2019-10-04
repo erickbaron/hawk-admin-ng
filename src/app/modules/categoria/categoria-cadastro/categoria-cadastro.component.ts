@@ -30,18 +30,15 @@ categorias: Categoria[] = [];
       this.router.navigateByUrl(this.returnUrl)
       // sucesso
       this.toastr.success("Cadastrou")
-    }, 
-    error => {
-      // erro
-      alert("Não foi possível cadastrar")
+  
     })
   }
 
   atualizarDados() {
     this.service.obterTodos().subscribe(x => {
       this.categorias = x;
-    }, error => {
-      alert('Erro ao carregar a página')});
+   
+    });
   }
 
     cancelar() {

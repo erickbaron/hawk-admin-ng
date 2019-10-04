@@ -93,18 +93,14 @@ export class ProdutoCadastroComponent implements OnInit {
       this.atualizarDados();
       // sucesso
       this.produto.nomeArquivo = null;
-    },
-      error => {
-        // erro
-        alert("Não foi possível cadastrar")
+   
       })
   }
 
   atualizarDados() {
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
-    }, error => {
-      alert("Erro ao atualizar a página");
+   
     });
   }
 

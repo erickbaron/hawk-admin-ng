@@ -41,8 +41,6 @@ export class ProdutoEditarComponent implements OnInit {
     this.service.obterTodos().subscribe(x => {
       this.produtos = x;
 
-    }, error => { 
-      alert("Erro ao atualizar a página");
     });
   }
 
@@ -73,9 +71,7 @@ editarUpload(){
     this.service.alterar(produto).subscribe( x => {
 
       this.atualizarDados();
-    },
-    error => {
-      alert("Não foi possível alterar")
+  
     })
   }
 

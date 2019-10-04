@@ -29,10 +29,7 @@ export class EmpresaCadastroComponent implements OnInit {
   salvar() {
     this.service.adicionar(this.empresa).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)
-    },
-      error => {
-        // erro
-        alert("Não foi possível cadastrar")
+   
       })
   }
 

@@ -60,11 +60,7 @@ export class EstoqueCadastroComponent implements OnInit {
 
   salvar() {
     this.service.adicionar(this.estoque).subscribe(x => {
-      // sucesso
-    },
-      error => {
-        // erro
-        alert("Não foi possível cadastrar")
+   
       })
   }
 
