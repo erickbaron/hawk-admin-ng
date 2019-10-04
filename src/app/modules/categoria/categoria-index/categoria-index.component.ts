@@ -31,4 +31,6 @@ export class CategoriaIndexComponent implements OnInit {
     })
   }
 
+  
+
 }
