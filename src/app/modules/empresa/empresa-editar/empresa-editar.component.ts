@@ -19,37 +19,40 @@ export class EmpresaEditarComponent implements OnInit {
     private service: EmpresaService,
     private route: ActivatedRoute,
     private router: Router) { }
-    empresas: Empresa[] = [];
-    
-    ngOnInit() {
-      this.returnUrl = '/empresa'
-      this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-      this.obterPeloId(this.id);
-    }
-    
-    obterPeloId(id) {
-      this.service.obterPeloId(id).subscribe(x => {
-        this.empresa = x;
+
+  empresas: Empresa[] = [];
+
+  ngOnInit() {
+    this.returnUrl = '/empresa'
+    this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.obterPeloId(this.id);
+  }
+
+  obterPeloId(id) {
+    this.service.obterPeloId(id).subscribe(x => {
+      this.empresa = x;
+    })
+  }
+
+
+  atualizarDados() {
+    this.service.obterTodos().subscribe(x => {
+      this.empresas = x;
+    }, error => {
+      alert("Erro ao atualizar a página");
+    });
+  }
+
+  alterar(empresa) {
+    this.service.alterar(empresa).subscribe(x => {
+      this.router.navigateByUrl(this.returnUrl)
+      this.atualizarDados()
+    },
+      error => {
+        alert("Não foi possível alterar")
       })
     }
-    
-    
-    atualizarDados() {
-      this.service.obterTodos().subscribe(x => {
-        this.empresas = x;
-      
-       
-      });
-    }
-    
-    alterar(empresa) {
-      this.service.alterar(empresa).subscribe(x => {
-        this.router.navigateByUrl(this.returnUrl)
-        this.atualizarDados()
-      
-      })
-    }
-    
+
     
     cancelar() {
       this.router.navigateByUrl(this.returnUrl)
