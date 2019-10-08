@@ -18,6 +18,7 @@ export class Produto {
     nomeArquivo: string; 
     nomeHash: string;
     empresaId: Empresa;
-    categoriaId: Categoria;
+    categoriaId: number;
+    categoria: Categoria;
     
 }

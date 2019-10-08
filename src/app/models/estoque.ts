@@ -4,8 +4,10 @@ import { Produto } from './produto';
 
 export class Estoque {
     id: number;
-    produtoId: Produto;
+    produto: Produto;
+    produtoId: number;
     empresaId: Empresa;
+    empresa: Empresa;
     quantidade: number;
     entrada: string;
     dataEntrada: Date;

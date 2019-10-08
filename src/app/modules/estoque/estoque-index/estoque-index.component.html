@@ -15,8 +15,8 @@
     <tbody>
       <tr *ngFor="let estoque of estoques">
         <td>{{estoque.id}}</td>
-        <td>{{estoque.empresaId}}</td>
-        <td>{{estoque.produtoId}}</td>
+        <td>{{estoque.empresa.nome}}</td>
+        <td>{{estoque.produto.nome}}</td>
         <td>{{estoque.entrada}}</td>
         <td>{{estoque.quantidade}}</td>
         <td>{{estoque.dataEntrada}}</td>
