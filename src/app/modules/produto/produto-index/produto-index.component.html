@@ -22,7 +22,7 @@
     <tr *ngFor="let produto of produtos">
       <td>{{produto.id}}</td>
       <td>
-        <img src="https://localhost:44330/Resources/Images/{{produto.nomeArquivo}}"
+        <img src="{{baseUrl}}/Resources/Images/{{produto.nomeArquivo}}"
         [style.width.px]="imagemLargura"
         [style.margin.px]="imagemMargem">
       </td>
