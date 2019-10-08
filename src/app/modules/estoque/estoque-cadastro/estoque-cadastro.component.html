@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-6">
       <label for="campo-empresa">Empresa<small class="text-danger"> *</small></label>
-      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.empresaID"
+      <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.empresaId"
         (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
