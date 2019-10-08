@@ -87,6 +87,7 @@ export class ProdutoCadastroComponent implements OnInit {
   }
 
   salvar() {
+    this.atualizarDados();
     this.uploadImagem();
     this.service.adicionar(this.produto).subscribe(x => {
       this.router.navigateByUrl(this.returnUrl)

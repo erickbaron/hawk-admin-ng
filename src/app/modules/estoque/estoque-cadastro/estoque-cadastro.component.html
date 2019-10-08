@@ -2,21 +2,21 @@
 
   <div class="row">
     <div class="col-6">
-      <label for="campo-empresa">Empresa</label>
+      <label for="campo-empresa">Empresa<small class="text-danger"> *</small></label>
       <ng-select [items]="empresas" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.empresaID"
         (open)="obterTodosEmpresa()" (change)="selecionadoEmpresa($event)">
       </ng-select>
     </div>
 
     <div class="col-6">
-        <label >Produto</label>
+        <label >Produto<small class="text-danger"> *</small></label>
         <ng-select [items]="produtos" bindLabel="nome" bindValue="id" placeholder="Selecione" [(ngModel)]="estoque.produtoId"
           (open)="obterTodosProduto()" (change)="selecionadoProduto($event)">
         </ng-select>
     </div>
 
     <div class="col-6">
-        <label for="campo-tipo">Entrada/Saida</label>
+        <label for="campo-tipo">Entrada/Saida<small class="text-danger"> *</small></label>
         <select class="form-control" placeholder="Selecione" [(ngModel)]="estoque.entrada">
           <option value="Entrada" class="form-control">Entrada</option>
           <option value="Saída" class="form-control" >Saída</option>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="col-6">
-        <label for="campo-quantidade" >Quantidade</label>
+        <label for="campo-quantidade" >Quantidade<small class="text-danger"> *</small></label>
         <input type="number" class="form-control" [(ngModel)]="estoque.quantidade" required>
     </div>
 

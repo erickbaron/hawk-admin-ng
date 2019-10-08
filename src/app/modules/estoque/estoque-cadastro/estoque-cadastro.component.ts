@@ -24,6 +24,8 @@ export class EstoqueCadastroComponent implements OnInit {
   produtos: Produto[] = [];
   idProduto: string= '';
 
+  estoques: Estoque[] = [];
+
   constructor(
     private service: EstoqueService,
     private route: ActivatedRoute,
@@ -32,7 +34,7 @@ export class EstoqueCadastroComponent implements OnInit {
     private produtoService:ProdutoService) { }
 
   ngOnInit() {
-    
+    this.returnUrl = '/estoque'
 
 
     
@@ -58,8 +60,18 @@ export class EstoqueCadastroComponent implements OnInit {
     this.idProduto = event == undefined ? 0 : event.id;
   }
 
+
+atualizarDados(){
+  this.service.obterTodos().subscribe(x => {
+    this.estoques = x;
+  }, error => { 
+    
+  });
+}
   salvar() {
     this.service.adicionar(this.estoque).subscribe(x => {
+      this.router.navigateByUrl(this.returnUrl)
+      this.atualizarDados();
       // sucesso
     },
       error => {

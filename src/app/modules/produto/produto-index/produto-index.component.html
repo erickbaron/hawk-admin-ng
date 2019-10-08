@@ -26,9 +26,9 @@
         [style.width.px]="imagemLargura"
         [style.margin.px]="imagemMargem">
       </td>
-      <td>{{produto.nome}}</td>
+      <td [style.width.px]="nomeLargura">{{produto.nome}}</td>
       <td>{{produto.categoriaId}}</td>
-      <td>{{produto.descricao}}</td>
+      <td [style.width.px]="descricaoLargura">{{produto.descricao}}</td>
       <td>R${{produto.valorCusto}}</td>
       <td>R${{produto.valorVenda}}</td>
       <td>{{produto.altura}} x {{produto.largura}} x {{produto.comprimento}}</td>
@@ -37,9 +37,9 @@
       <td>{{produto.largura}}</td>
       <td>{{produto.comprimento}}</td> -->
       <td>
-        <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/produto/editar/{{produto.id}}"> Editar</button>
+        <button class="btn btn-raised btn-primary mr-2 icon-pencil" routerLink="/produto/editar/{{produto.id}}"></button>
         <button class="btn btn-raised btn-danger icon-trash"
-        (click)="apagar(produto.id)"> Apagar</button>
+        (click)="apagar(produto.id)"></button>
       </td>
     </tr>
   </tbody>

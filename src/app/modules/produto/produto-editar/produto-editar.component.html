@@ -1,68 +1,71 @@
 <h3 class="text-center">Editar Produto</h3>
 <div class="form-group">
-    <label for="campo-nome">Nome</label>
-    <input type="text" id="produto-nome" class="form-control" [(ngModel)]="produto.nome">
-  </div>
-  
-<div class="row">
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-valor-custo">Valor Custo</label>
-          <input type="number" id="produto-valor-custo" class="form-control" [(ngModel)]="produto.valorCusto">
-        </div> 
-  </div>
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-valor-venda">Valor Venda</label>
-          <input type="number" id="produto-valor-venda" class="form-control" [(ngModel)]="produto.valorVenda">
-        </div>
-  </div>
-</div>
-
- <div class="form-group">
-   <label for="campo-descricao">Descrição</label>
-   <textarea id="produto-descricao" class="form-control" [(ngModel)]="produto.descricao"></textarea>
- </div>
-
-<div class="row">
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-peso">Peso</label>
-          <input type="number" id="produto-peso" class="form-control" [(ngModel)]="produto.peso">
-        </div>
-  </div>
-  <div class="col-6">
-      <div class="form-group">
-          <label for="campo-altura">Altura</label>
-          <input type="number" id="produto-altura" class="form-control" [(ngModel)]="produto.altura">
-        </div>
-  </div>
+  <label for="campo-nome">Nome<small class="text-danger"> *</small></label>
+  <input type="text" id="produto-nome" class="form-control" [(ngModel)]="produto.nome">
 </div>
 
 <div class="row">
   <div class="col-6">
-      <div class="form-group">
-          <label for="campo-largura">Largura</label>
-          <input type="number" id="produto-largura" class="form-control" [(ngModel)]="produto.largura">
-        </div>
+    <div class="form-group">
+      <label for="campo-valor-custo">Valor Custo<small class="text-danger"> *</small></label>
+      <input type="number" id="produto-valor-custo" class="form-control" [(ngModel)]="produto.valorCusto">
+    </div>
   </div>
   <div class="col-6">
-      <div class="form-group">
-          <label for="campo-comprimento">Comprimento</label>
-          <input type="number" id="produto-comprimento" class="form-control" [(ngModel)]="produto.comprimento">
-        </div>
+    <div class="form-group">
+      <label for="campo-valor-venda">Valor Venda<small class="text-danger"> *</small></label>
+      <input type="number" id="produto-valor-venda" class="form-control" [(ngModel)]="produto.valorVenda">
+    </div>
   </div>
 </div>
 
-<div class="col-6">
-  <div class="form-group ">
-    <label for="arquivo">Imagens</label>
-      <div>
-        <input type="file" id="arquivo" name="arquivo" 
-         (change)="onFileChange($event)" [(ngModel)]="produto.nomeArquivo">
+
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="campo-peso">Peso(g)<small class="text-danger"> *</small></label>
+      <input type="number" id="produto-peso" class="form-control" [(ngModel)]="produto.peso">
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="form-group">
+      <label for="campo-altura">Altura(cm)<small class="text-danger"> *</small></label>
+      <input type="number" id="produto-altura" class="form-control" [(ngModel)]="produto.altura">
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="form-group">
+      <label for="campo-largura">Largura(cm)<small class="text-danger"> *</small></label>
+      <input type="number" id="produto-largura" class="form-control" [(ngModel)]="produto.largura">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="campo-comprimento">Comprimento(cm)<small class="text-danger"> *</small></label>
+      <input type="number" id="produto-comprimento" class="form-control" [(ngModel)]="produto.comprimento">
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="form-group">
+      <label for="arquivo">Imagem<small class="text-danger"> *</small></label>
+      <div class="custom-file">
+        <input type="file" id="arquivo" name="arquivo" class="custom-file-input" (change)="onFileChange($event)"
+          [(ngModel)]="produto.nomeArquivo">
+        <label for="arquivo" class="custom-file-label">{{produto.nomeArquivo}}</label>
       </div>
+    </div>
   </div>
 </div>
 
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-  <button class="btn btn-raised btn-success pull-right ft-save mr-2" (click)="alterar(produto)">Salvar</button>
+<div class="form-group">
+  <label for="campo-descricao">Descrição<small class="text-danger"> *</small></label>
+  <textarea id="produto-descricao" class="form-control" [(ngModel)]="produto.descricao"></textarea>
+</div>
+
+<button class="btn btn-raised btn-success pull-right ft-save " (click)="alterar(produto)"> Salvar</button>
+<button class="btn btn-raised btn-danger pull-right icon-close mr-2" (click)="cancelar()"> Cancelar</button>

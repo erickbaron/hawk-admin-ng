@@ -20,7 +20,9 @@ export class ProdutoIndexComponent implements OnInit {
   categoriaNome: string = "";
   imagemLargura = 50;
   imagemMargem = 2;
-
+  descricaoLargura = 250;
+  nomeLargura = 200;
+  
   constructor(
     private service: ProdutoService,
     private serviceCategoria: CategoriaService,

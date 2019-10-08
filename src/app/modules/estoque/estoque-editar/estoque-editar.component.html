@@ -2,33 +2,30 @@
 
 <div class="row">
   <div class="form-group col-6">
-    <label for="campo-empresa">Empresa</label>
+    <label for="campo-empresa">Empresa<small class="text-danger"> *</small></label>
     <input type="text" id="estoque-empresa" class="form-control" [(ngModel)]="estoque.empresaId">
   </div>
 
   <div class="form-group col-6">
-    <label for="campo-produto">Produto</label>
+    <label for="campo-produto">Produto<small class="text-danger"> *</small></label>
     <input type="text" id="estoque-produto" class="form-control" [(ngModel)]="estoque.produtoId">
   </div>
 </div>
 
 <div class="row">
-  <div class="form-group col-6">
-    <label for="campo-quantidade ">Quantidade </label>
-    <input type="number" class="form-control" id="estoque-quantidade" [(ngModel)]="estoque.quantidade">
-  </div>
-
-
-
 
   <div class="col-6">
-    <label for="campo-tipo">Entrada/Saida</label>
+    <label for="campo-tipo">Entrada/Saida<small class="text-danger"> *</small></label>
     <select class="form-control" placeholder="Selecione">
       <option value="Entrada" class="form-control">Entrada</option>
       <option value="Saída" class="form-control" [(ngModel)]="estoque.entrada">Saída</option>
     </select>
     <!--<input type="" class="form-control" [(ngModel)]="estoque.entrada">-->
   </div>
+  <div class="form-group col-6">
+    <label for="campo-quantidade ">Quantidade<small class="text-danger"> *</small></label>
+    <input type="number" class="form-control" id="estoque-quantidade" [(ngModel)]="estoque.quantidade">
+  </div>
 </div>
-<button class="btn btn-raised btn-danger pull-right icon-close" (click)="cancelar()">Cancelar</button>
-<button class="btn btn-raised btn-success pull-right mr-2" (click)="alterar(estoque)">Salvar</button>
+<button class="btn btn-raised btn-success pull-right" (click)="alterar(estoque)">Salvar</button>
+<button class="btn btn-raised btn-danger pull-right icon-close mr-2" (click)="cancelar()">Cancelar</button>
