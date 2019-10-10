@@ -28,6 +28,8 @@ export class ProdutoEditarComponent implements OnInit {
     this.returnUrl = '/produto'
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.obterPeloId(this.id);
+          this.atualizarDados();
+
   }
 
   obterPeloId(id) {
@@ -71,7 +73,6 @@ editarUpload(){
     this.atualizarDados();
 
     this.service.alterar(produto).subscribe( x => {
-
       this.atualizarDados();
     },
     error => {

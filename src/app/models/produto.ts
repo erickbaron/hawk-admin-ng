@@ -16,7 +16,6 @@ export class Produto {
     registroAtivo: boolean;
     promocao: boolean;
     nomeArquivo: string; 
-    nomeHash: string;
     empresaId: Empresa;
     categoriaId: number;
     categoria: Categoria;
