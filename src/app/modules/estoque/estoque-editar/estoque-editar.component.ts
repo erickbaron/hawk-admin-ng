@@ -28,6 +28,7 @@ export class EstoqueEditarComponent implements OnInit {
   }
 
   salvar() {
+    this.router.navigateByUrl(this.returnUrl)
     this.service.adicionar(this.estoque).subscribe(x => {
       // sucesso
     }, 
